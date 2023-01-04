@@ -15,15 +15,8 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
+            className="ml-auto text-left"
           >
-            
-            <Nav.Link href="#action2">Random Hobbyz</Nav.Link>
-            <Nav.Link href="#" disabled>
-              Make Post
-            </Nav.Link>
             <Form className="d-flex">
             <Form.Control
               type="search"
@@ -33,14 +26,25 @@ const NavBar = () => {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-            <NavDropdown title="Profile" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+          </Nav>
+          <Nav className="ml-auto text-left">
+            <Nav.Link href="#"><i className="fas fa-home"></i>Home</Nav.Link>
+            
+            <Nav.Link href="#">
+            <i className="fas fa-sign-in-alt"></i>Sign In
+            </Nav.Link>
+            <Nav.Link href="#">
+            <i className="fas fa-user-plus"></i>Sign Up
+            </Nav.Link>
+            
+            <NavDropdown title="Username" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
-                Another action
+                Sign Out
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Something else here
+                Something else here??
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
