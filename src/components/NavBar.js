@@ -6,13 +6,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from '../styles/NavBar.module.css'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <div>
         <Navbar className={styles.NavBar} expand="md" fixed="top">
             <Container fluid>
+              <NavLink to="/">
               <Navbar.Brand href="#">Hobbyz</Navbar.Brand>
+              </NavLink>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
