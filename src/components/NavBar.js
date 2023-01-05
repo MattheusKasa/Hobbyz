@@ -32,13 +32,14 @@ const NavBar = () => {
                   </Form>
                 </Nav>
                 <Nav>
-                  <Nav.Link href="#"><i className="fas fa-home"></i>Home</Nav.Link>
-                  <Nav.Link href="#">
-                    <i className="fas fa-sign-in-alt"></i>Sign In
-                  </Nav.Link>
-                  <Nav.Link href="#">
+                  <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/"><i className="fas fa-home"></i>Home
+                  </NavLink>
+                  <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+                    <i className="fas fa-sign-in-alt"></i>Sign in
+                  </NavLink>
+                  <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
                     <i className="fas fa-user-plus"></i>Sign Up
-                  </Nav.Link>
+                  </NavLink>
                   
                   <NavDropdown title="Username" id="navbarScrollingDropdown">
                     <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
