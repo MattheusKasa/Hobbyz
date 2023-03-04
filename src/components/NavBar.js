@@ -7,7 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from '../styles/NavBar.module.css'
 import { NavLink } from 'react-router-dom';
-import { CurrentUserContext } from "../App";
 import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
