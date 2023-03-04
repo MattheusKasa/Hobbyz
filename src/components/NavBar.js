@@ -47,7 +47,7 @@ const NavBar = () => {
                   </NavLink>
                   
                   
-                  <NavDropdown title="Username" id="navbarScrollingDropdown">
+                  <NavDropdown title={currentUser ? loggedInIcons : loggedOutIcons} id="navbarScrollingDropdown">
                     <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
                       Sign Out
@@ -57,7 +57,6 @@ const NavBar = () => {
                       Something else here??
                     </NavDropdown.Item>
                   </NavDropdown>
-                  {currentUser ? loggedInIcons : loggedOutIcons}
                 </Nav>
               </Navbar.Collapse>
             </Container>
