@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,9 +8,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from '../styles/NavBar.module.css'
 import { NavLink } from 'react-router-dom';
 import { CurrentUserContext } from "../App";
+import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
-  const currentUser = useContext(CurrentUserContext)
+  const currentUser = useCurrentUser();
   const loggedInIcons = <>{currentUser?.username}</>
   const loggedOutIcons = <> <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
   <i className="fas fa-sign-in-alt"></i>Sign in
