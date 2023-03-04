@@ -50,7 +50,7 @@ const NavBar = () => {
                   <NavDropdown title={currentUser ? loggedInIcons : loggedOutIcons} id="navbarScrollingDropdown">
                     <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      Posts
+                      Hobbyz
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
