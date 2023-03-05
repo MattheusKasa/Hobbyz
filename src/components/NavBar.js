@@ -11,6 +11,15 @@ import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+
+  const addPostIcon = (
+    <NavLink 
+    className={styles.NavLink}
+    activeClassName={styles.Active}
+    to="/posts/create">
+  <i className="far fa-plus-square"></i>Add Post
+</NavLink>
+  )
   const loggedInIcons = <>{currentUser?.username}</>
   const loggedOutIcons = <> <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
   <i className="fas fa-sign-in-alt"></i>Sign in
@@ -29,9 +38,8 @@ const NavBar = () => {
               </NavLink>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
-                <Nav
-                  
-                >
+                <Nav>
+                {currentUser && addPostIcon}
                   <Form className="d-flex">
                     <Form.Control
                       type="search"
@@ -45,6 +53,7 @@ const NavBar = () => {
                 <Nav>
                   <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/"><i className="fas fa-home"></i>Home
                   </NavLink>
+                  
                   
                   
                   <NavDropdown title={currentUser ? loggedInIcons : loggedOutIcons} id="navbarScrollingDropdown">
