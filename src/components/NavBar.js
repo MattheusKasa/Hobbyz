@@ -85,25 +85,29 @@ const NavBar = () => {
                     <NavDropdown.Item>
                     <NavLink 
                       className={styles.NavLink}
-                      to="{`/profiles/${currentUser?.profile_id}`}"
+                      to={`/profiles/${currentUser?.profile_id}`}
                       >
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
                       height={40}  />
                     </NavLink>
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Hobbyz
+                    <NavDropdown.Item>
+                     <NavLink 
+                        className={styles.NavLink}
+                        to="/myhobbyz">
+                        <i className="fas fa-stream"></i>My Hobbyz
+                      </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item >
                     <NavLink 
-      className={styles.NavLink}
-      to="/"
-      onClick={handleSignOut}
-      >
-      <i className="fas fa-sign-out-alt"></i>Sign Out
-    </NavLink>
+                      className={styles.NavLink}
+                      to="/"
+                      onClick={handleSignOut}
+                      >
+                      <i className="fas fa-sign-out-alt"></i>Sign Out
+                    </NavLink>
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
