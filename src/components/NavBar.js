@@ -10,10 +10,13 @@ import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
+import useClickOutsideToggle from '../hooks/UseClickOutsideToggle';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const SetCurrentUser = useSetCurrentUser();
+
+  const {expanded, setExpanded, ref} = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
@@ -44,53 +47,29 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/liked">
       <i className="fas fa-heart"></i>liked
-    </NavLink>
-    
-  </>
-  const loggedOutIcons = <> 
-    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-      <i className="fas fa-sign-in-alt"></i>Sign in
-    </NavLink>
-    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
-      <i className="fas fa-user-plus"></i>Sign Up
-    </NavLink>
-  </>
 
-  return (
-    <div>
-        <Navbar className={styles.NavBar} expand="md" fixed="top">
-            <Container fluid>
-              <NavLink to="/">
-              <Navbar.Brand href="#">Hobbyz</Navbar.Brand>
-              </NavLink>
-              <Navbar.Toggle aria-controls="navbarScroll" />
-              <Navbar.Collapse id="navbarScroll">
-                <Nav>
-                {currentUser && addPostIcon}
-                  <Form className="d-flex">
-                    <Form.Control
-                      type="search"
-                      placeholder="Search for Hobbyz!"
-                      className="me-2"
-                      aria-label="Search"
-                    />
-                  <Button variant="outline-success">Search</Button>
-                  </Form>
-                </Nav>
-                <Nav>
-                  
-                  
-                  
-                  <NavDropdown title={currentUser ? loggedInIcons : loggedOutIcons} id="navbarScrollingDropdown">
-                    <NavDropdown.Item>
-                    <NavLink 
-                      className={styles.NavLink}
+      
+
+    
+
+      
+
+    </NavLink>
+
+
+    <Nav expanded={expanded}
+                      className={styles.NavBar}
+                      expand="md"
+                      fixed="top"
                       to={`/profiles/${currentUser?.profile_id}`}
                       >
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
-                      height={40}  />
-                    </NavLink>
+                      height={40} />
+                      
+                  <NavDropdown id="navbarScrollingDropdown" ref={ref} onClick={() => setExpanded(!expanded)}>
+                    <NavDropdown.Item>
+
                     </NavDropdown.Item>
                     <NavDropdown.Item>
                      <NavLink 
@@ -111,6 +90,45 @@ const NavBar = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
+    
+    
+  </>
+  const loggedOutIcons = <> 
+    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+      <i className="fas fa-sign-in-alt"></i>Sign in
+    </NavLink>
+    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
+      <i className="fas fa-user-plus"></i>Sign Up
+    </NavLink>
+  </>
+
+  return (
+    <div>
+        <Navbar className={styles.NavBar} expand="md" fixed="top">
+            <Container fluid>
+              <NavLink to="/">
+              <Navbar.Brand href="#">Hobbyz</Navbar.Brand>
+              </NavLink>
+              {currentUser && addPostIcon}
+              <Navbar.Toggle 
+                ref={ref}
+                onClick={() => setExpanded(!expanded)}
+                aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="navbarScroll">
+                <Nav className="ml-auto text-left">
+                
+                  <Form className="d-flex">
+                    <Form.Control
+                      type="search"
+                      placeholder="Search for Hobbyz!"
+                      className="me-2"
+                      aria-label="Search"
+                    />
+                  <Button variant="outline-success">Search</Button>
+                  </Form>
+                  {currentUser ? loggedInIcons : loggedOutIcons}
+                </Nav>
+
               </Navbar.Collapse>
             </Container>
         </Navbar>
