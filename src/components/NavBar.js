@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from '../styles/NavBar.module.css'
+import logo from "../assets/logo.png";
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
@@ -107,7 +108,9 @@ const NavBar = () => {
         <Navbar className={styles.NavBar} expand="md" fixed="top">
             <Container fluid>
               <NavLink to="/">
-              <Navbar.Brand href="#">Hobbyz</Navbar.Brand>
+              <Navbar.Brand>
+                <img src={logo} alt="logo" height="45" href="#" />
+              </Navbar.Brand>
               </NavLink>
               {currentUser && addPostIcon}
               <Navbar.Toggle 
