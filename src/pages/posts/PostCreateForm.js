@@ -109,7 +109,7 @@ function PostCreateForm() {
                 </Form.Label>
               )}
 
-              <Form.Control type="file"
+              <Form.Control type="file" hidden
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
