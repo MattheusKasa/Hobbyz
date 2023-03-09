@@ -83,7 +83,7 @@ const Post = (props) => {
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Youre not able to like your own post</Tooltip>}
+              overlay={<Tooltip>You're not able to like your own post</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
