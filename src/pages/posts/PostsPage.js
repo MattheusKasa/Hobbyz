@@ -35,6 +35,13 @@ function PostsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>mobile</p>
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form 
+            classname={styles.SearchBar}
+            onSubmit={(event) => event.preventDefault()}>
+            <Form.Control type="text" className="mr-sm-20" placeholder="Search for Hobbyz!" />
+
+        </Form>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
