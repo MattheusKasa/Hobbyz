@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropdownEdit } from "../../components/DropdownEdit";
@@ -26,6 +26,11 @@ const Post = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+  };
 
   const handleLike = async () => {
     try {
@@ -70,7 +75,11 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && ( <DropdownEdit /> )}
+            {is_owner && postPage && ( 
+            <DropdownEdit
+            handleEdit={handleEdit} 
+            /> 
+            )}
           </div>
         </Card>
       </Card.Body>

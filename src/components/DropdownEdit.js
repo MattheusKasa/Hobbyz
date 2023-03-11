@@ -4,26 +4,26 @@ import styles from "../styles/DropdownEdit.module.css";
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
-const EditDots = React.forwardRef(({ onClick }, ref) => (
-    <i
-    className="fas fa-ellipsis-v"
-      ref={ref}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    />
+const ThreeDots = React.forwardRef(({ onClick }, ref) => (
+  <i
+  className="fas fa-ellipsis-v"
+  ref={ref}
+  onClick={(e) => {
+    e.preventDefault();
+    onClick(e);
+  }}
+/>
   ));
 
-export const DropdownEdit = () => {
+export const DropdownEdit = ({ handleEdit }) => {
     return (
       <Dropdown className="ml-auto" drop="left">
-      <Dropdown.Toggle as={EditDots} />
+      <Dropdown.Toggle as={ThreeDots} />
 
       <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
         <Dropdown.Item
         className={styles.DropdownItem}
-        onClick={() => {}}
+        onClick={handleEdit}
         aria-label="edit">
           <i className="fas fa-edit" />
         </Dropdown.Item>
