@@ -17,18 +17,22 @@ const EditDots = React.forwardRef(({ onClick }, ref) => (
 
 export const DropdownEdit = () => {
     return (
-      <Dropdown>
-      <Dropdown.Toggle as={EditDots} id="dropdown-custom-components">
-        Custom toggle
-      </Dropdown.Toggle>
+      <Dropdown className="ml-auto" drop="left">
+      <Dropdown.Toggle as={EditDots} />
 
-      <Dropdown.Menu>
-        <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-        <Dropdown.Item eventKey="3" active>
-          Orange
+      <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
+        <Dropdown.Item
+        className={styles.DropdownItem}
+        onClick={() => {}}
+        aria-label="edit">
+          <i className="fas fa-edit" />
         </Dropdown.Item>
-        <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+        <Dropdown.Item
+        classname={styles.DropdownItem}
+        onClick={() => {}}
+        aria-label="delete">
+          <i className="fas fa-trash-alt" />
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

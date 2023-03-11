@@ -70,7 +70,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && <DropdownEdit />}
+            {is_owner && postPage && ( <DropdownEdit /> )}
           </div>
         </Card>
       </Card.Body>
