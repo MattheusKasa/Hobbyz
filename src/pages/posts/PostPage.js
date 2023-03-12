@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import CommentCreateForm from "../comments/CommentCreateForm";
@@ -20,7 +20,7 @@ function PostPage() {
   useEffect(() => {
     const handleMount = async () => {
         try {
-            const [{ data: post }, {data: comments}] = await Promise.all([
+            const [{ data: post }, { data: comments }] = await Promise.all([
                 axiosReq.get(`/posts/${id}`),
                 axiosReq.get(`/comments/?post=${id}`),
             ]);
@@ -29,7 +29,7 @@ function PostPage() {
         } catch (err) {
             console.log(err)
         }
-    }
+    };
 
     handleMount();
   }, [id]);
@@ -52,7 +52,7 @@ function PostPage() {
           "Comments"
         ) : null}
         {comments.results.length ? (
-          comments.results.map(comment => (
+          comments.results.map((comment) => (
             <Comment
             key={comment.id}
             {...comment}
