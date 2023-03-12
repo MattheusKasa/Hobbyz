@@ -68,15 +68,18 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0]);
+
+    if (imageInput?.current?.files[0]) {
+        formData.append("image", imageInput.current.files[0]);
+    }
 
     try {
-      const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
+        await axiosReq.put(`/posts/${id}/`, formData);
+        history.push(`/posts/${id}`);
+        } catch (err) {
+        console.log(err);
+        if (err.response?.status !== 401) {
+            setErrors(err.response?.data);
       }
     }
   };
@@ -114,14 +117,16 @@ function PostEditForm() {
         </Alert>
       ))}
 
+      
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Update Post
+      </Button>
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Cancel
       </Button>
     </div>
   );
@@ -144,7 +149,7 @@ function PostEditForm() {
                       className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
                       htmlFor="image-upload"
                     >
-                      Change the image
+                      Change your image
                     </Form.Label>
                   </div>
                 </>
