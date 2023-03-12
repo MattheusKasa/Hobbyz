@@ -50,7 +50,17 @@ function PostPage() {
         ) : comments.results.length ? (
           "Comments"
         ) : null}
-        
+        {comments.results.length ? (
+          comments.results.map(comment => (
+            <p key={comment.id}>
+              {comment.owner}: {comment.content}
+            </p>
+          ))
+        ) : currentUser ? (
+          <span>No comments yet, be the first to leave a comment!</span>
+        ) : (
+          <span>No comments yet. Log in leave a comment!</span>
+        )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
