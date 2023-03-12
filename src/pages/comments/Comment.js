@@ -1,16 +1,45 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import { DropdownEdit } from "../../components/DropdownEdit";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Comment.module.css";
 
 const Comment = (props) => {
-  const { profile_id, profile_image, owner, updated_at, content } = props;
-
-  const currentUser = useCurrentUser()
-  const is_owner = currentUser?.username === owner;
+    const {
+      profile_id,
+      profile_image,
+      owner,
+      updated_at,
+      content,
+      id,
+      setPost,
+      setComments,
+    } = props;
+  
+    const currentUser = useCurrentUser();
+    const is_owner = currentUser?.username === owner;
+  
+    const handleDelete = async () => {
+      try {
+        await axiosRes.delete(`/comments/${id}/`);
+        setPost((prevPost) => ({
+          results: [
+            {
+              ...prevPost.results[0],
+              comments_count: prevPost.results[0].comments_count - 1,
+            },
+          ],
+        }));
+  
+        setComments((prevComments) => ({
+          ...prevComments,
+          results: prevComments.results.filter((comment) => comment.id !== id),
+        }));
+      } catch (err) {}
+    };
 
   return (
     <div>
@@ -25,7 +54,7 @@ const Comment = (props) => {
           <p>{content}</p>
         </Card.Body>
         {is_owner && (
-            <DropdownEdit handleEdit={() => {}} handleDelete={() => {}} />
+          <DropdownEdit handleEdit={() => {}} handleDelete={handleDelete} />
         )}
       </Card>
     </div>
