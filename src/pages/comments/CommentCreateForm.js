@@ -40,7 +40,7 @@ function CommentCreateForm(props) {
   };
 
   return (
-    <Form className="mt-2" onSubmit={handleSubmit}>
+    <Form className="mt-5" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
@@ -48,11 +48,11 @@ function CommentCreateForm(props) {
           </Link>
           <Form.Control
             className={styles.Form}
-            placeholder="my comment..."
+            placeholder="Write your comment here"
             as="textarea"
             value={content}
             onChange={handleChange}
-            rows={2}
+            rows={3}
           />
         </InputGroup>
       </Form.Group>
@@ -61,7 +61,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Post!
       </button>
     </Form>
   );
