@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -6,6 +6,7 @@ import Avatar from "../../components/Avatar";
 import { DropdownEdit } from "../../components/DropdownEdit";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Comment.module.css";
+import CommentEditForm from "./CommentEditForm";
 
 const Comment = (props) => {
   const {
@@ -18,11 +19,11 @@ const Comment = (props) => {
     setPost,
     setComments,
   } = props;
-  
+
+  const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
@@ -43,22 +44,36 @@ const Comment = (props) => {
   };
 
   return (
-    <div>
+    <>
       <hr />
       <Card>
-      <Link to={`/profiles/${profile_id}`}>
+        <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
         <Card.Body className="align-self-center ml-2">
-        <span className={styles.Owner}>{owner}</span>
+          <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
-          <p>{content}</p>
+          {showEditForm ? (
+            <CommentEditForm
+              id={id}
+              profile_id={profile_id}
+              content={content}
+              profileImage={profile_image}
+              setComments={setComments}
+              setShowEditForm={setShowEditForm}
+            />
+          ) : (
+            <p>{content}</p>
+          )}
         </Card.Body>
-        {is_owner && (
-          <DropdownEdit handleEdit={() => {}} handleDelete={handleDelete} />
+        {is_owner && !showEditForm && (
+          <DropdownEdit
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
         )}
       </Card>
-    </div>
+    </>
   );
 };
 

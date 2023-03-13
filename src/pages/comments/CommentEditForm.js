@@ -48,17 +48,17 @@ function CommentEditForm(props) {
       <div className="text-right">
         <button
           className={styles.Button}
-          onClick={() => setShowEditForm(false)}
-          type="button"
-        >
-          cancel
-        </button>
-        <button
-          className={styles.Button}
           disabled={!content.trim()}
           type="submit"
         >
           save
+        </button>
+        <button
+          className={styles.Button}
+          onClick={() => setShowEditForm(false)}
+          type="button"
+        >
+          cancel
         </button>
       </div>
     </Form>

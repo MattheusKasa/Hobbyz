@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -40,7 +42,7 @@ function CommentCreateForm(props) {
   };
 
   return (
-    <Form className="mt-5" onSubmit={handleSubmit}>
+    <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
@@ -48,11 +50,11 @@ function CommentCreateForm(props) {
           </Link>
           <Form.Control
             className={styles.Form}
-            placeholder="Write your comment here"
+            placeholder="my comment..."
             as="textarea"
             value={content}
             onChange={handleChange}
-            rows={3}
+            rows={2}
           />
         </InputGroup>
       </Form.Group>
@@ -61,7 +63,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        Post!
+        post
       </button>
     </Form>
   );
