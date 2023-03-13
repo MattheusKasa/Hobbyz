@@ -13,7 +13,7 @@ function CommentEditForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosRes.put(`/comments/${id}/`, {
+      await axiosRes.put(`/comments/${id}`, {
         content: formContent.trim(),
       });
       setComments((prevComments) => ({
@@ -51,14 +51,14 @@ function CommentEditForm(props) {
           disabled={!content.trim()}
           type="submit"
         >
-          save
+          Save
         </button>
         <button
           className={styles.Button}
           onClick={() => setShowEditForm(false)}
           type="button"
         >
-          cancel
+          Cancel
         </button>
       </div>
     </Form>
