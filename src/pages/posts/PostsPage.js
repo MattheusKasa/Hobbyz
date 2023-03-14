@@ -47,7 +47,7 @@ function PostsPage({ message, filter = "" }) {
         <PopularProfiles mobile />
         <Form
             
-            classname={styles.SearchBar}
+            className={styles.SearchBar}
             onSubmit={(event) => event.preventDefault()}>
             <Form.Control
             value={query}
