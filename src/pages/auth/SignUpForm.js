@@ -15,11 +15,8 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
-
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
-
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -42,7 +39,6 @@ const SignUpForm = () => {
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
-
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>
@@ -53,14 +49,14 @@ const SignUpForm = () => {
                 name="username"
                 value={username}
                 onChange={handleChange}
-              />
+                />
             </Form.Group>
             {errors.username?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
-
+            
             <Form.Group controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -108,7 +104,6 @@ const SignUpForm = () => {
             ))}
           </Form>
         </Container>
-
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
             Already a member? <span>Sign in</span>
@@ -117,11 +112,9 @@ const SignUpForm = () => {
       </Col>
       <Col
         md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
+        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}>
         <Image
           className={`${appStyles.FillerImage}`}
-
         />
       </Col>
     </Row>

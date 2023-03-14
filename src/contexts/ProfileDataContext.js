@@ -80,7 +80,7 @@ export const ProfileDataProvider = ({ children }) => {
       }
     };
 
-    handleMount();
+  handleMount();
   }, [currentUser]);
 
   return (

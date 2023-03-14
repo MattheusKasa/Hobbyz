@@ -18,14 +18,12 @@ const ProfileEditForm = () => {
   const { id } = useParams();
   const history = useHistory();
   const imageFile = useRef();
-
   const [profileData, setProfileData] = useState({
     name: "",
     content: "",
     image: "",
   });
   const { name, content, image } = profileData;
-
   const [errors, setErrors] = useState({});
 
   useEffect(() => {

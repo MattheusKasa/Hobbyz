@@ -24,9 +24,7 @@ function SignInForm() {
     password: "",
   });
   const { username, password } = signInData;
-
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -87,9 +85,7 @@ function SignInForm() {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
-              type="submit"
-            >
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
               Sign in
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
@@ -107,11 +103,8 @@ function SignInForm() {
       </Col>
       <Col
         md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
-      >
-        <Image
-          className={`${appStyles.FillerImage}`}
-        />
+        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}>
+        <Image className={`${appStyles.FillerImage}`} />
       </Col>
     </Row>
   );

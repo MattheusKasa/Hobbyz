@@ -49,27 +49,16 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/liked">
-      <i className="fas fa-heart"></i>liked
-
-      
-
-    
-
-      
-
+      <i className="fas fa-heart"></i>Liked
     </NavLink>
-
-
     <Nav expanded={expanded}
                       className={styles.NavBar}
                       expand="md"
                       fixed="top"
-                      to={`/profiles/${currentUser?.profile_id}`}
-                      >
+                      to={`/profiles/${currentUser?.profile_id}`}>
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
-                      height={40} />
-                      
+                      height={40} /> 
                   <NavDropdown id="navbarScrollingDropdown" ref={ref} onClick={() => setExpanded(!expanded)}>
                     <NavDropdown.Item>
 

@@ -14,10 +14,8 @@ import appStyles from "../../App.module.css";
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
   const { id } = useParams();
-
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -54,7 +52,7 @@ const UsernameForm = () => {
             <Form.Group>
               <Form.Label>Change your username</Form.Label>
               <Form.Control
-                placeholder="username"
+                placeholder="Username"
                 type="text"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}

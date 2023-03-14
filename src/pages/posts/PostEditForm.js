@@ -9,20 +9,17 @@ import Image from "react-bootstrap/Image";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
   });
   const { title, content, image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
   const {id} = useParams();
@@ -133,9 +130,7 @@ function PostEditForm() {
     <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
+          <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
             <Form.Group className="text-center">
                   <figure>
                     <Image className={appStyles.Image} src={image} rounded />

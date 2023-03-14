@@ -15,13 +15,11 @@ const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();
-
   const [userData, setUserData] = useState({
     new_password1: "",
     new_password2: "",
   });
   const { new_password1, new_password2 } = userData;
-
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
@@ -56,7 +54,7 @@ const UserPasswordForm = () => {
             <Form.Group>
               <Form.Label>New password</Form.Label>
               <Form.Control
-                placeholder="new password"
+                placeholder="New password"
                 type="password"
                 value={new_password1}
                 onChange={handleChange}
@@ -69,9 +67,9 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm your password</Form.Label>
+              <Form.Label>Confirm your new password</Form.Label>
               <Form.Control
-                placeholder="confirm new password"
+                placeholder="Confirm your new password"
                 type="password"
                 value={new_password2}
                 onChange={handleChange}

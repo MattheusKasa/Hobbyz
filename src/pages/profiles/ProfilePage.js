@@ -21,13 +21,10 @@ import { ProfileEditDropdown } from "../../components/DropdownEdit";
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-
   const currentUser = useCurrentUser();
   const { id } = useParams();
-
   const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
-
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
@@ -88,14 +85,14 @@ function ProfilePage() {
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
                 onClick={() => handleUnfollow(profile)}
               >
-                unfollow
+                Unfollow
               </Button>
             ) : (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.Black}`}
                 onClick={() => handleFollow(profile)}
               >
-                follow
+                Follow
               </Button>
             ))}
         </Col>
@@ -122,7 +119,7 @@ function ProfilePage() {
       ) : (
         <Asset
           src={NoResults}
-          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+          message={`No results found, ${profile?.owner} hasn't posted anything yet!`}
         />
       )}
     </>

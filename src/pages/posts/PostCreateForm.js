@@ -18,17 +18,14 @@ import { useRedirect } from "../../hooks/useRedirect";
 function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
   });
   const { title, content, image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
-
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -102,10 +99,10 @@ function PostCreateForm() {
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -114,9 +111,7 @@ function PostCreateForm() {
     <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
+          <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
             <Form.Group className="text-center">
               {image ? (
                 <>
