@@ -38,19 +38,7 @@ const NavBar = () => {
   )
   const loggedInIcons = (
   <>
-    <NavLink 
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/feed">
-      <i class="fa-solid fa-user-check"></i>Followed
-    </NavLink>
-    <NavLink 
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/liked">
-      <i className="fas fa-heart"></i>Liked
-    </NavLink>
-    <Nav expanded={expanded}
+  <Nav expanded={expanded}
                       className={styles.ProfileDrop}
                       expand="md"
                       fixed="top"
@@ -81,6 +69,19 @@ const NavBar = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
+    <NavLink 
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/feed">
+      <i class="fa-solid fa-user-check"></i>Followed
+    </NavLink>
+    <NavLink 
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/liked">
+      <i className="fas fa-heart"></i>Liked
+    </NavLink>
+    
     
 
       <Nav
