@@ -96,16 +96,14 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        {profile?.content && <Col className="p-5">{profile.content}</Col>}
       </Row>
     </>
   );
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
+      
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (

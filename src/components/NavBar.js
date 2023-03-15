@@ -43,7 +43,7 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/feed">
-      <i className="fas fa-stream"></i>Feed
+      <i className="fas fa-stream"></i>Followed
     </NavLink>
     <NavLink 
       className={styles.NavLink}
@@ -55,7 +55,7 @@ const NavBar = () => {
                       className={styles.NavBar}
                       expand="md"
                       fixed="top"
-                      to={`/profiles/${currentUser?.profile_id}`}>
+                      >
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
                       height={40} /> 
@@ -66,8 +66,8 @@ const NavBar = () => {
                     <NavDropdown.Item>
                      <NavLink 
                         className={styles.NavLink}
-                        to="/myhobbyz">
-                        <i className="fas fa-stream"></i>My Hobbyz
+                        to={`/profiles/${currentUser?.profile_id}`}>
+                        <i className="fas fa-stream"></i>My Profile
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
