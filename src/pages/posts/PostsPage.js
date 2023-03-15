@@ -52,7 +52,7 @@ function PostsPage({ message, filter = "" }) {
             <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            type="text" className="mr-sm-2" placeholder="Search for Hobbyz!" />
+            type="text" classname="mr-sm-2" placeholder="Search for Hobbyz!" />
         </Form>
         {hasLoaded ? (
           <>
