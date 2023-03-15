@@ -1,6 +1,6 @@
 .App {
     font-family: "DM Sans", sans-serif;
-    background-color: #f8f8f8;
+    background-color: BEBEBE;
     min-height: 100vh;
 }
 
@@ -38,8 +38,4 @@
     cursor: pointer;
     transition: color ease-in-out 0.3s;
     color: #EFCB58;
-  }
-
-  #navbarScrollingDropdown {
-    color: red;
   }
