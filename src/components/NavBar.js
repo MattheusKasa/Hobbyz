@@ -33,70 +33,62 @@ const NavBar = () => {
     className={styles.NavLink}
     activeClassName={styles.Active}
     to="/posts/create">
-  <i className="far fa-plus-square"></i>Add Hobby!
+  <i className="far fa-plus-square"></i>Add a Hobby
 </NavLink>
   )
-  const loggedInIcons = (
-  <>
-  <Nav expanded={expanded}
-                      className={styles.Profile}
-                      expand="md"
-                      fixed="top"
-                      >
-                      <Avatar src={currentUser?.profile_image}
-                      text="Profile"
-                      height={50} /> 
-                  <NavDropdown
-                  
-                  ref={ref} onClick={() => setExpanded(!expanded)}>
-                    <NavDropdown.Item>
-                     <NavLink 
-                        className={styles.NavLink}
-                        to={`/profiles/${currentUser?.profile_id}`}>
-                        <i class="fa-solid fa-user"></i>My Profile
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item >
-                    <NavLink 
-                      className={styles.NavLink}
-                      to="/"
-                      onClick={handleSignOut}
-                      >
-                      <i className="fas fa-sign-out-alt"></i>Sign Out
-                    </NavLink>
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
+const loggedInIcons = (
+<>
+<Nav expanded={expanded}
+  className={styles.Profile}
+  expand="md"
+  fixed="top"
+  >
+  <Avatar src={currentUser?.profile_image}
+    text="Profile"
+    height={50} 
+  />
+<NavDropdown ref={ref} onClick={() => setExpanded(!expanded)}>
+  <NavDropdown.Item>
     <NavLink 
       className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/feed">
-      <i class="fa-solid fa-user-check"></i>Followed
+      to={`/profiles/${currentUser?.profile_id}`}>
+      <i className="fa-solid fa-user"></i>My Profile
     </NavLink>
+  </NavDropdown.Item>
+  <NavDropdown.Divider />
+  <NavDropdown.Item >
     <NavLink 
       className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/liked">
-      <i className="fas fa-heart"></i>Liked
-    </NavLink>
-    
-    
-
-      <Nav
-      className={styles.NavLink}
-      activeClassName={styles.Active}
+      to="/"
+      onClick={handleSignOut}
       >
-      <i class="fa-solid fa-2x fa-moon"></i>
-    </Nav>
+      <i className="fas fa-sign-out-alt"></i>Sign Out
+    </NavLink>
+  </NavDropdown.Item>
+</NavDropdown>
+</Nav>
+<NavLink 
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+  to="/feed">
+  <i class="fa-solid fa-user-check"></i>Followed
+</NavLink>
+<NavLink 
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+  to="/liked">
+  <i className="fas fa-heart"></i>Liked
+</NavLink>
+<Nav
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+>
+<i class="fa-solid fa-2x fa-moon"></i>
+</Nav>
 
+</>
 
-
-                
-    
-    
-  </>
-  );
+);
   const loggedOutIcons = <> 
     <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
       <i className="fas fa-sign-in-alt"></i>Sign in
@@ -106,29 +98,26 @@ const NavBar = () => {
     </NavLink>
   </>
 
-  return (
-    <div>
-        <Navbar className={styles.NavBar} expand="md" fixed="top">
-            <Container fluid>
-              <NavLink to="/">
-              <Navbar.Brand>
-                <img src={logo} alt="logo" height="50" href="#" />
-              </Navbar.Brand>
-              </NavLink>
-              {currentUser && addPostIcon}
-              <Navbar.Toggle 
-                ref={ref}
-                onClick={() => setExpanded(!expanded)}
-                aria-controls="basic-navbar-nav" />
-              
-                <Nav className="ml-auto text-left">
-                  {currentUser ? loggedInIcons : loggedOutIcons}
-                </Nav>
-
-
-            </Container>
-        </Navbar>
-    </div>
+return (
+  <div>
+    <Navbar className={styles.NavBar} expand="md" fixed="top">
+      <Container fluid>
+        <NavLink to="/">
+          <Navbar.Brand>
+            <img src={logo} alt="logo" height="50" href="/" />
+          </Navbar.Brand>
+        </NavLink>
+          {currentUser && addPostIcon}
+        <Navbar.Toggle 
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
+          aria-controls="basic-navbar-nav" />
+        <Nav className="ml-auto text-left">
+          {currentUser ? loggedInIcons : loggedOutIcons}
+        </Nav>
+      </Container>
+    </Navbar>
+  </div>
   )
 }
 

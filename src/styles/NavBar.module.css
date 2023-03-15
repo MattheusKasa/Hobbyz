@@ -5,6 +5,7 @@
 .NavLink {
     padding: 5px;
     color: #700365;
+    text-decoration: none;
 }
 
 .Active {
@@ -17,8 +18,4 @@
 
 .Profile {
     color: #700365;
-}
-
-.DropProfile {
-    color: red;
 }
