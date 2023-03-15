@@ -22,21 +22,22 @@
   }
   
   a:hover i {
-    color: black;
-    transition: color ease-in-out 0.3s;
+    color: #EFCB58;
+    transition: color ease-in-out 0.5s;
   }
   
   i {
-    color: #cfced3;
+    color: #700365;
     font-size: 1.6rem;
     padding: 7px;
     vertical-align: middle;
   }
   
   i:hover {
+    text-decoration: none;
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: black;
+    color: #EFCB58;
   }
 
   #navbarScrollingDropdown {
@@ -44,5 +45,5 @@
   }
 
   .Active i {
-    color: black;
+    color: rgb(236, 17, 17);
 }

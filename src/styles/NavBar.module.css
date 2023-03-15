@@ -1,6 +1,5 @@
 .NavBar {
     background-color: #ffffff;
-    color: #700365;
 }
 
 .NavLink {
@@ -8,11 +7,22 @@
     color: #700365;
 }
 
+.Active {
+    color: #EFCB58;
+}
+
 .Active i {
     color: #EFCB58;
 }
 
-.ProfileDrop {
-    float: left;
+.NavLinkMoon {
+    color: #e9490a;
 }
 
+.NavLinkMoon :hover {
+    color: #700365;
+}
+
+.ProfileDrop {
+    color: #700365;
+}

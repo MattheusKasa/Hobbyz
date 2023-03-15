@@ -82,6 +82,18 @@ const NavBar = () => {
                   </NavDropdown>
                 </Nav>
     
+
+      <Nav
+      className={styles.NavLinkMoon}
+      activeClassName={styles.ActiveMoon}
+      >
+      <i class="fa-solid fa-2x fa-moon"></i>
+    </Nav>
+
+
+
+                
+    
     
   </>
   );
