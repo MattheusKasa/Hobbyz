@@ -39,22 +39,21 @@ const NavBar = () => {
   const loggedInIcons = (
   <>
   <Nav expanded={expanded}
-                      className={styles.ProfileDrop}
+                      className={styles.Profile}
                       expand="md"
                       fixed="top"
                       >
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
                       height={50} /> 
-                  <NavDropdown id="navbarScrollingDropdown" ref={ref} onClick={() => setExpanded(!expanded)}>
-                    <NavDropdown.Item>
-
-                    </NavDropdown.Item>
+                  <NavDropdown
+                  
+                  ref={ref} onClick={() => setExpanded(!expanded)}>
                     <NavDropdown.Item>
                      <NavLink 
                         className={styles.NavLink}
                         to={`/profiles/${currentUser?.profile_id}`}>
-                        <i className="fas fa-stream"></i>My Profile
+                        <i class="fa-solid fa-user"></i>My Profile
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />

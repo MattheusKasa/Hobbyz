@@ -23,6 +23,10 @@
     color: #700365;
 }
 
-.ProfileDrop {
+.Profile {
     color: #700365;
+}
+
+.DropProfile {
+    color: red;
 }
