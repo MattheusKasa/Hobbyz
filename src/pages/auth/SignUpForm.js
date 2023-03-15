@@ -6,6 +6,7 @@ import appStyles from "../../App.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import signup from "../../assets/signup.png";
 
 const SignUpForm = () => {
   useRedirect("loggedIn");
@@ -115,6 +116,7 @@ const SignUpForm = () => {
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}>
         <Image
           className={`${appStyles.FillerImage}`}
+          src={signup}
         />
       </Col>
     </Row>
