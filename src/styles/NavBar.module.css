@@ -1,12 +1,18 @@
 .NavBar {
     background-color: #ffffff;
+    color: #700365;
 }
 
 .NavLink {
     padding: 5px;
+    color: #700365;
 }
 
 .Active i {
-    color: black;
+    color: #EFCB58;
+}
+
+.ProfileDrop {
+    float: left;
 }
 

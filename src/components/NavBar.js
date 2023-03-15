@@ -35,15 +35,16 @@ const NavBar = () => {
     className={styles.NavLink}
     activeClassName={styles.Active}
     to="/posts/create">
-  <i className="far fa-plus-square"></i>Add Post
+  <i className="far fa-plus-square"></i>Add Hobby!
 </NavLink>
   )
-  const loggedInIcons = <>
+  const loggedInIcons = (
+  <>
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/feed">
-      <i className="fas fa-stream"></i>Followed
+      <i class="fa-solid fa-user-check"></i>Followed
     </NavLink>
     <NavLink 
       className={styles.NavLink}
@@ -52,13 +53,13 @@ const NavBar = () => {
       <i className="fas fa-heart"></i>Liked
     </NavLink>
     <Nav expanded={expanded}
-                      className={styles.NavBar}
+                      className={styles.ProfileDrop}
                       expand="md"
                       fixed="top"
                       >
                       <Avatar src={currentUser?.profile_image}
                       text="Profile"
-                      height={40} /> 
+                      height={50} /> 
                   <NavDropdown id="navbarScrollingDropdown" ref={ref} onClick={() => setExpanded(!expanded)}>
                     <NavDropdown.Item>
 
@@ -85,6 +86,7 @@ const NavBar = () => {
     
     
   </>
+  );
   const loggedOutIcons = <> 
     <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
       <i className="fas fa-sign-in-alt"></i>Sign in
@@ -100,7 +102,7 @@ const NavBar = () => {
             <Container fluid>
               <NavLink to="/">
               <Navbar.Brand>
-                <img src={logo} alt="logo" height="45" href="#" />
+                <img src={logo} alt="logo" height="50" href="#" />
               </Navbar.Brand>
               </NavLink>
               {currentUser && addPostIcon}
