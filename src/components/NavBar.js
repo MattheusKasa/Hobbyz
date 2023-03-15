@@ -84,8 +84,8 @@ const NavBar = () => {
     
 
       <Nav
-      className={styles.NavLinkMoon}
-      activeClassName={styles.ActiveMoon}
+      className={styles.NavLink}
+      activeClassName={styles.Active}
       >
       <i class="fa-solid fa-2x fa-moon"></i>
     </Nav>
