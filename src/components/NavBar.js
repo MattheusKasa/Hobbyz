@@ -78,11 +78,8 @@ const loggedInIcons = (
   </NavDropdown>
 </Nav>
 
-<Nav
-  className={styles.NavLink}
-  activeClassName={styles.Active}
->
-<i class="fa-solid fa-2x fa-moon"></i>
+<Nav className={`${styles.NavLink} ${styles.MoonNav}`} activeClassName={styles.Active}>
+  <i className="fa-solid fa-2x fa-moon"></i>
 </Nav>
 
 </>
