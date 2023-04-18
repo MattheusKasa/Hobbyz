@@ -38,6 +38,26 @@ const NavBar = () => {
   )
 const loggedInIcons = (
 <>
+
+<NavLink 
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+  to="/feed">
+  <i class="fa-solid fa-user-check"></i>Followed
+</NavLink>
+<NavLink 
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+  to="/liked">
+  <i className="fas fa-heart"></i>Liked
+</NavLink>
+<Nav
+  className={styles.NavLink}
+  activeClassName={styles.Active}
+>
+<i class="fa-solid fa-2x fa-moon"></i>
+</Nav>
+
 <Nav expanded={expanded}
   className={styles.Profile}
   expand="md"
@@ -67,25 +87,6 @@ const loggedInIcons = (
   </NavDropdown.Item>
 </NavDropdown>
 </Nav>
-<NavLink 
-  className={styles.NavLink}
-  activeClassName={styles.Active}
-  to="/feed">
-  <i class="fa-solid fa-user-check"></i>Followed
-</NavLink>
-<NavLink 
-  className={styles.NavLink}
-  activeClassName={styles.Active}
-  to="/liked">
-  <i className="fas fa-heart"></i>Liked
-</NavLink>
-<Nav
-  className={styles.NavLink}
-  activeClassName={styles.Active}
->
-<i class="fa-solid fa-2x fa-moon"></i>
-</Nav>
-
 </>
 
 );
@@ -112,9 +113,9 @@ return (
           ref={ref}
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav" />
-        <Nav className="ml-auto text-left">
+        <Navbar.Collapse className="ml-auto text-left">
           {currentUser ? loggedInIcons : loggedOutIcons}
-        </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   </div>
