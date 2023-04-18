@@ -43,8 +43,16 @@ function PostsPage({ message, filter = "" }) {
   }, [filter, query, pathname, currentUser]);
 
   return (
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+    <>
+      <Container fluid className="py-2">
+        <Row>
+          <Col xs={12}>
+            <PopularProfiles limit={3} />
+          </Col>
+        </Row>
+      </Container>
+      <Row className="h-100">
+        <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Form 
             className={styles.SearchBar}
@@ -79,11 +87,10 @@ function PostsPage({ message, filter = "" }) {
             <Asset spinner />
           </Container>
         )}
-      </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
-    </Row>
+        </Col>
+        
+      </Row>
+    </>
   );
 }
 
