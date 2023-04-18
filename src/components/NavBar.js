@@ -51,6 +51,33 @@ const loggedInIcons = (
   to="/liked">
   <i className="fas fa-heart"></i>Liked
 </NavLink>
+
+
+<Nav expanded={expanded} className={styles.Profile} expand="md" fixed="top">
+  <NavDropdown
+    ref={ref}
+    onClick={() => setExpanded(!expanded)}
+    title={
+      <>
+        <Avatar src={currentUser?.profile_image} height={50} />
+        <span className={styles.Username}>{currentUser?.username}</span>
+      </>
+    }
+  >
+    <NavDropdown.Item>
+      <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`}>
+        <i className="fa-solid fa-user"></i>My Profile
+      </NavLink>
+    </NavDropdown.Item>
+    <NavDropdown.Divider />
+    <NavDropdown.Item>
+      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+        <i className="fas fa-sign-out-alt"></i>Sign Out
+      </NavLink>
+    </NavDropdown.Item>
+  </NavDropdown>
+</Nav>
+
 <Nav
   className={styles.NavLink}
   activeClassName={styles.Active}
@@ -58,35 +85,6 @@ const loggedInIcons = (
 <i class="fa-solid fa-2x fa-moon"></i>
 </Nav>
 
-<Nav expanded={expanded}
-  className={styles.Profile}
-  expand="md"
-  fixed="top"
-  >
-  <Avatar src={currentUser?.profile_image}
-    text="Profile"
-    height={50} 
-  />
-<NavDropdown ref={ref} onClick={() => setExpanded(!expanded)}>
-  <NavDropdown.Item>
-    <NavLink 
-      className={styles.NavLink}
-      to={`/profiles/${currentUser?.profile_id}`}>
-      <i className="fa-solid fa-user"></i>My Profile
-    </NavLink>
-  </NavDropdown.Item>
-  <NavDropdown.Divider />
-  <NavDropdown.Item >
-    <NavLink 
-      className={styles.NavLink}
-      to="/"
-      onClick={handleSignOut}
-      >
-      <i className="fas fa-sign-out-alt"></i>Sign Out
-    </NavLink>
-  </NavDropdown.Item>
-</NavDropdown>
-</Nav>
 </>
 
 );
