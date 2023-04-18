@@ -36,55 +36,59 @@ const NavBar = () => {
   <i className="far fa-plus-square"></i>Add a Hobby
 </NavLink>
   )
-const loggedInIcons = (
-<>
-
-<NavLink 
-  className={styles.NavLink}
-  activeClassName={styles.Active}
-  to="/feed">
-  <i class="fa-solid fa-user-check"></i>Followed
-</NavLink>
-<NavLink 
-  className={styles.NavLink}
-  activeClassName={styles.Active}
-  to="/liked">
-  <i className="fas fa-heart"></i>Liked
-</NavLink>
-
-
-<Nav expanded={expanded} className={styles.Profile} expand="md" fixed="top">
-  <NavDropdown
-    ref={ref}
-    onClick={() => setExpanded(!expanded)}
-    title={
-      <>
-        <Avatar src={currentUser?.profile_image} height={50} />
-        <span className={styles.Username}>{currentUser?.username}</span>
-      </>
-    }
-  >
-    <NavDropdown.Item>
-      <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`}>
-        <i className="fa-solid fa-user"></i>My Profile
+  const loggedInIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i class="fa-solid fa-user-check"></i>Followed
       </NavLink>
-    </NavDropdown.Item>
-    <NavDropdown.Divider />
-    <NavDropdown.Item>
-      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign Out
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked"
+      >
+        <i className="fas fa-heart"></i>Liked
       </NavLink>
-    </NavDropdown.Item>
-  </NavDropdown>
-</Nav>
-
-<Nav className={`${styles.NavLink} ${styles.MoonNav}`} activeClassName={styles.Active}>
-  <i className="fa-solid fa-2x fa-moon"></i>
-</Nav>
-
-</>
-
-);
+  
+      <Nav expanded={expanded} className={styles.Profile} expand="md" fixed="top">
+        <NavDropdown
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
+          title={
+            <>
+              <Avatar src={currentUser?.profile_image} height={50} />
+              <span className={styles.Username}>{currentUser?.username}</span>
+            </>
+          }
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={styles.NavLink}
+              to={`/profiles/${currentUser?.profile_id}`}
+            >
+              <i className="fa-solid fa-user"></i>My Profile
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>
+            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+              <i className="fas fa-sign-out-alt"></i>Sign Out
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>
+            <NavLink className={styles.NavLink} to="/">
+              <i className="fa-solid fa-2x fa-moon"></i>
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+    </>
+  );
+  
   const loggedOutIcons = <> 
     <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
       <i className="fas fa-sign-in-alt"></i>Sign in
@@ -103,18 +107,22 @@ return (
             <img src={logo} alt="logo" height="50" href="/" />
           </Navbar.Brand>
         </NavLink>
-          {currentUser && addPostIcon}
-        <Navbar.Toggle 
+        {currentUser && addPostIcon}
+        <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
-          aria-controls="basic-navbar-nav" />
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse className="ml-auto text-left">
           {currentUser ? loggedInIcons : loggedOutIcons}
+          <Nav className={`${styles.NavLink} ${styles.MoonNav} ${styles.hideOnDesktop}`} activeClassName={styles.Active}>
+            <i className="fa-solid fa-2x fa-moon"></i>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   </div>
-  )
-}
+);
+};
 
 export default NavBar;

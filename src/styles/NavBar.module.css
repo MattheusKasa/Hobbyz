@@ -31,3 +31,19 @@
 .MoonNav {
   margin-left: auto;
 }
+
+.hideOnDesktop {
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    .hideOnDesktop {
+      display: inline;
+    }
+  }
+
+.navbarItemsContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
