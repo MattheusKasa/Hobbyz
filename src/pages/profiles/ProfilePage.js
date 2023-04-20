@@ -51,7 +51,6 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -79,8 +78,9 @@ function ProfilePage() {
         </Col>
         <Col lg={3} className="text-lg-right">
           {currentUser &&
-            !is_owner &&
-            (profile?.following_id ? (
+            (is_owner ? (
+              <ProfileEditDropdown id={profile?.id} />
+            ) : profile?.following_id ? (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
                 onClick={() => handleUnfollow(profile)}
@@ -100,6 +100,8 @@ function ProfilePage() {
       </Row>
     </>
   );
+  
+  
 
   const mainProfilePosts = (
     <>
@@ -126,7 +128,7 @@ function ProfilePage() {
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        {!is_owner && <PopularProfiles mobile />}
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
@@ -139,10 +141,11 @@ function ProfilePage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
+        {!is_owner && <PopularProfiles />}
       </Col>
     </Row>
   );
+  
 }
 
 export default ProfilePage;
