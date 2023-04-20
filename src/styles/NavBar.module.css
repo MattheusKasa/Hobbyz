@@ -3,9 +3,10 @@
 }
 
 .NavLink {
-    padding: 5px;
-    color: #700365;
-    text-decoration: none;
+  padding: 5px;
+  color: #700365;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .Active {
@@ -30,11 +31,9 @@
 
 .MoonNav {
   margin-left: auto;
+  padding: 7px;
 }
 
-.hideOnDesktop {
-    display: none;
-  }
   
   @media (max-width: 767px) {
     .hideOnDesktop {
@@ -46,4 +45,13 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+}
+
+#theme-toggle:hover i {
+  color: #EFCB58;
+  transition: color ease-in-out 0.5s;
+}
+
+.hiddenIcon {
+  display: none;
 }

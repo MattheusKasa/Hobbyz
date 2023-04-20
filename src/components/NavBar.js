@@ -30,10 +30,11 @@ const NavBar = () => {
     }
   };
 
-  // Add a new function to handle theme toggle
   const handleThemeToggle = () => {
+    console.log('Toggling theme:', theme);
     toggleTheme();
   };
+  
 
   const addPostIcon = (
     <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/posts/create">
@@ -44,46 +45,33 @@ const NavBar = () => {
   const loggedInIcons = (
     <>
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/feed">
-        <i class="fa-solid fa-user-check"></i>Followed
+        <i className="fa-solid fa-user-check"></i>Followed
       </NavLink>
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/liked">
         <i className="fas fa-heart"></i>Liked
       </NavLink>
-
-      <Nav expanded={expanded} className={styles.Profile} expand="md" fixed="top">
-        <NavDropdown
-          ref={ref}
-          onClick={() => setExpanded(!expanded)}
-          title={
-            <>
-              <Avatar src={currentUser?.profile_image} height={50} />
-              <span className={styles.Username}>{currentUser?.username}</span>
-            </>
-          }
-        >
-          <NavDropdown.Item>
-            <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`}>
-              <i className="fa-solid fa-user"></i>My Profile
-            </NavLink>
-          </NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item>
-            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-              <i className="fas fa-sign-out-alt"></i>Sign Out
-            </NavLink>
-          </NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item>
-            <button className={styles.NavLink} onClick={handleThemeToggle}>
-              {theme === 'light' ? (
-                <i className="fa-solid fa-2x fa-moon"></i>
-              ) : (
-                <i className="fa-solid fa-2x fa-sun"></i>
-              )}
-            </button>
-          </NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
+      <NavDropdown
+        ref={ref}
+        onClick={() => setExpanded(!expanded)}
+        title={
+          <>
+            <Avatar src={currentUser?.profile_image} height={50} />
+            <span className={styles.Username}>{currentUser?.username}</span>
+          </>
+        }
+      >
+        <NavDropdown.Item>
+          <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`}>
+            <i className="fa-solid fa-user"></i>My Profile
+          </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item>
+          <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+            <i className="fas fa-sign-out-alt"></i>Sign Out
+          </NavLink>
+        </NavDropdown.Item>
+      </NavDropdown>
     </>
   );
 
@@ -115,25 +103,19 @@ const NavBar = () => {
           />
           <Navbar.Collapse className="ml-auto text-left">
             {currentUser ? loggedInIcons : loggedOutIcons}
-            <Nav
-              className={`${styles.NavLink} ${styles.MoonNav} ${styles.hideOnDesktop}`}
-              activeClassName={styles.Active}
-            >
+            <Nav className={`${styles.NavLink} ${styles.MoonNav}`}>
               <button onClick={handleThemeToggle}>
-                {theme === 'light' ? (
-                  <i className="fa-solid fa-2x fa-moon"></i>
-                ) : (
-                  <i className="fa-solid fa-2x fa-sun"></i>
-                )}
+                <i className={`fas fa-2x fa-moon ${theme === 'moon' ? '' : styles.hiddenIcon}`}></i>
+                <i className={`fas fa-2x fa-sun ${theme === 'sun' ? '' : styles.hiddenIcon}`}></i>
               </button>
             </Nav>
           </Navbar.Collapse>
+
         </Container>
       </Navbar>
     </div>
-  );
-  
+    );
+
   };
   
   export default NavBar;
-  
