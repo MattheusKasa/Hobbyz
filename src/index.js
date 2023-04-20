@@ -6,15 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { ProfileDataProvider } from "./contexts/ProfileDataContext";
+import { ThemeProvider } from "./contexts/ThemeContext"; // Import ThemeProvider
 
 ReactDOM.render(
-    <Router>
-      <CurrentUserProvider>
-        <ProfileDataProvider>
+  <Router>
+    <CurrentUserProvider>
+      <ProfileDataProvider>
+        <ThemeProvider> {/* Add ThemeProvider */}
           <App />
-        </ProfileDataProvider>
-      </CurrentUserProvider>
-    </Router>,
+        </ThemeProvider> {/* Close ThemeProvider */}
+      </ProfileDataProvider>
+    </CurrentUserProvider>
+  </Router>,
   document.getElementById("root")
 );
 

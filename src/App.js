@@ -15,32 +15,34 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
+import { useTheme } from "./contexts/ThemeContext"; // Import useTheme
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+  const { theme } = useTheme(); // Use the theme context
 
   return (
-        <div className={styles.App}>
-          <NavBar />
-          <Container className={styles.Main}>
-            <Switch>
-              <Route exact path="/" render={() => ( <PostsPage message="No results found. Try searching for another Hobby!" /> )} />
-              <Route exact path="/feed" render={() => ( <PostsPage message="No results found. Try following a user or searching for another Hobby!" filter={`owner__followed__owner__profile=${profile_id}&`} /> )} />
-              <Route exact path="/liked" render={() => ( <PostsPage message="No results found. Try liking a post or searching for another Hobby!" filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} /> )} />
-              <Route exact path="/signin" render={() => <SignInForm />} />
-              <Route exact path="/signup" render={() => <SignUpForm />} />
-              <Route exact path="/posts/create" render={() => <PostCreateForm />} />
-              <Route exact path="/posts/:id" render={() => <PostPage />} />
-              <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-              <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-              <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
-              <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
-              <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
-              <Route render={() => <NotFound />} />
-            </Switch>
-          </Container>
-        </div>
+    <div className={`${styles.App} ${theme}`}> {/* Add theme class to your App */}
+      <NavBar />
+      <Container className={styles.Main}>
+        <Switch>
+          <Route exact path="/" render={() => ( <PostsPage message="No results found. Try searching for another Hobby!" /> )} />
+          <Route exact path="/feed" render={() => ( <PostsPage message="No results found. Try following a user or searching for another Hobby!" filter={`owner__followed__owner__profile=${profile_id}&`} /> )} />
+          <Route exact path="/liked" render={() => ( <PostsPage message="No results found. Try liking a post or searching for another Hobby!" filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} /> )} />
+          <Route exact path="/signin" render={() => <SignInForm />} />
+          <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route exact path="/posts/:id" render={() => <PostPage />} />
+          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
+          <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
+          <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
+          <Route render={() => <NotFound />} />
+        </Switch>
+      </Container>
+    </div>
   );
 }
 
