@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -34,7 +34,12 @@ const NavBar = () => {
   const handleThemeToggle = () => {
     console.log('Toggling theme:', theme);
     toggleTheme();
+    setIcon(prevIcon => prevIcon === "moon" ? "sun" : "moon");
   };
+  
+  const [icon, setIcon] = useState("moon");
+
+  
   
 
   const addPostIcon = (
@@ -106,12 +111,15 @@ const NavBar = () => {
           />
           <Navbar.Collapse className="ml-auto text-left">
             {currentUser ? loggedInIcons : loggedOutIcons}
+
+
             <Nav className={`${styles.NavLink} ${styles.MoonNav}`}>
-              <button onClick={handleThemeToggle}>
-                <i className={`fas fa-2x fa-moon ${theme === 'dark' ? '' : styles.hiddenIcon}`}></i>
-                <i className={`fas fa-2x fa-sun ${theme === 'dark' ? styles.hiddenIcon : ''}`}></i>
-              </button>
-            </Nav>
+  <button onClick={handleThemeToggle}>
+    <i className={`fas fa-2x fa-${icon}`}></i>
+  </button>
+</Nav>
+
+
           </Navbar.Collapse>
 
         </Container>
