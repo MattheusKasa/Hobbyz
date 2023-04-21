@@ -1,8 +1,16 @@
 .App {
   font-family: 'Roboto', sans-serif;
-    background-color: BEBEBE;
-    min-height: 100vh;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+[data-theme='moon'] .App {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
 
 .Main {
   padding-top: 91px;

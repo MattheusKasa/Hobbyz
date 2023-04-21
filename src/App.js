@@ -15,15 +15,21 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
-import { useTheme } from "./contexts/ThemeContext"; // Import useTheme
+import { useTheme } from "./contexts/ThemeContext";
+import { useEffect } from "react";
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
-  const { theme } = useTheme(); // Use the theme context
+  const { theme } = useTheme();
+
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
-    <div className={`${styles.App} ${theme}`}> {/* Add theme class to your App */}
+    <div className={`${styles.App} ${theme}`}>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
