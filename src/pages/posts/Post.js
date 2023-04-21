@@ -6,6 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropdownEdit } from "../../components/DropdownEdit";
+import { useTheme } from "../../contexts/ThemeContext";
+
 
 const Post = (props) => {
   const {
@@ -27,6 +29,9 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+
+  const { theme } = useTheme(); // Add this line
+
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
@@ -83,13 +88,20 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
+
           <div className="d-flex align-items-center">
-            <span>{updated_at}</span>
-            {is_owner && postPage && ( 
-            <DropdownEdit
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-            /> 
+            <span
+              className={`${
+                styles.postDate
+              } ${theme === "light" ? styles.lightDate : styles.darkDate}`}
+            >
+              {updated_at}
+            </span>
+            {is_owner && postPage && (
+              <DropdownEdit
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
             )}
           </div>
         </Card>
@@ -98,8 +110,24 @@ const Post = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
+        {title && (
+          <Card.Title
+            className={`text-center ${styles.postTitle} ${
+              theme === "light" ? styles.lightTitle : styles.darkTitle
+            }`}
+          >
+            {title}
+          </Card.Title>
+        )}
+        {content && (
+          <Card.Text
+            className={`${styles.postContent} ${
+              theme === "light" ? styles.lightContent : styles.darkContent
+            }`}
+          >
+            {content}
+          </Card.Text>
+        )}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

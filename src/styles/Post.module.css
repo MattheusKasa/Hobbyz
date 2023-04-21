@@ -1,24 +1,48 @@
 .Post {
-    background-color: #ffffff;
-    border: 5px solid #700365;
-    border-radius: 25px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .Post figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
-    color: #f85032;
-  }
-  
-  .Heart:hover {
-    color: #700365;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
-  }
+  background-color: #ffffff;
+  border: 5px solid #700365;
+  border-radius: 25px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.Post figure,
+h5 {
+  margin: 0 0;
+}
+
+.Heart {
+  color: #f85032;
+}
+
+.Heart:hover {
+  color: #700365;
+}
+
+.HeartOutline:hover {
+  color: #f85032;
+}
+
+.darkTitle {
+  color: #000000;
+}
+
+.darkDate {
+  color: #000000;
+}
+
+.darkContent {
+  color: #000000;
+}
+
+.lightTitle {
+  color: #333333;
+}
+
+.lightDate {
+  color: #333333;
+}
+
+.lightContent {
+  color:#333333;
+}
