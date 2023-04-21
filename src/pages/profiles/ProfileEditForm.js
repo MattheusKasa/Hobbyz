@@ -110,27 +110,34 @@ const ProfileEditForm = () => {
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
-            <Form.Group>
-              {image && (
-                <figure>
-                  <Image src={image} fluid />
-                </figure>
-              )}
-              {errors?.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
-              <div>
-                <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
-                  htmlFor="image-upload"
-                >
-                  Change your profile image
-                </Form.Label>
-              </div>
-              
-            </Form.Group>
+          <Form.Group>
+            {image && (
+              <figure>
+                <Image src={image} fluid />
+              </figure>
+            )}
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <div>
+              <Form.Label
+                className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
+                htmlFor="image-upload"
+              >
+                Change your profile image
+              </Form.Label>
+              <input
+                type="file"
+                id="image-upload"
+                ref={imageFile}
+                accept="image/*"
+                style={{ display: "none" }}
+              />
+            </div>
+          </Form.Group>
+
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
