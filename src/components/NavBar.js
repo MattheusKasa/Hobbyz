@@ -110,16 +110,14 @@ const NavBar = () => {
             aria-controls="basic-navbar-nav"
           />
           <Navbar.Collapse className="ml-auto text-left">
+          <div className={styles.navContent}>
             {currentUser ? loggedInIcons : loggedOutIcons}
-
-
             <Nav className={`${styles.NavLink} ${styles.MoonNav}`}>
-  <button onClick={handleThemeToggle}>
-    <i className={`fas fa-2x fa-${icon}`}></i>
-  </button>
-</Nav>
-
-
+              <button onClick={handleThemeToggle}>
+                <i className={`fas fa-2x fa-${icon}`}></i>
+              </button>
+            </Nav>
+            </div>
           </Navbar.Collapse>
 
         </Container>

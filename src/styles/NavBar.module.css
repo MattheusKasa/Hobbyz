@@ -58,3 +58,10 @@
   background-color: #1a1a1a;
   color: #ffffff;
 }
+
+
+.navContent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
