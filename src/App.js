@@ -17,6 +17,9 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
 import { useTheme } from "./contexts/ThemeContext";
 import { useEffect } from "react";
+import BackToTop from './components/BackToTop';
+
+
 
 function App() {
   const currentUser = useCurrentUser();
@@ -48,6 +51,7 @@ function App() {
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
+      <BackToTop />
     </div>
   );
 }
