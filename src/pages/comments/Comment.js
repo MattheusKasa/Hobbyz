@@ -7,7 +7,7 @@ import { DropdownEdit } from "../../components/DropdownEdit";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Comment.module.css";
 import CommentEditForm from "./CommentEditForm";
-import { useTheme } from "../../contexts/ThemeContext";
+
 
 const Comment = (props) => {
   const {
@@ -24,7 +24,7 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
-  const { theme } = useTheme();
+  
 
   const handleDelete = async () => {
     try {

@@ -103,6 +103,7 @@ const NavBar = () => {
               <img src={logo} alt="logo" height="50" href="/" />
             </Navbar.Brand>
           </NavLink>
+          <span className={styles.welcomeText}>Welcome to Hobbyz!</span>
           {currentUser && addPostIcon}
           <Navbar.Toggle
             ref={ref}

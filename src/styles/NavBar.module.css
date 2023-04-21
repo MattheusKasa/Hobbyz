@@ -67,4 +67,10 @@
   width: 100%;
 }
 
+.welcomeText {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 16px;
+  align-self: center;
+}
 
