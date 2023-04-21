@@ -4,7 +4,32 @@
     margin-right: 8px;
   }
   
-  .Date {
-    font-weight: lighter;
-    color: #c1c1c5;
-  }
+.Date {
+  font-weight: lighter;
+  color: #c1c1c5;
+}
+
+.darkComment {
+  background-color: #333;
+  color: white;
+}
+
+.darkDate {
+  color: white;
+}
+
+.Comment {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.Owner {
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+.Date {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  color: var(--secondary-text-color);
+}

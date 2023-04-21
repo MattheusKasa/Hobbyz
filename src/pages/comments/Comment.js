@@ -7,6 +7,7 @@ import { DropdownEdit } from "../../components/DropdownEdit";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Comment.module.css";
 import CommentEditForm from "./CommentEditForm";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Comment = (props) => {
   const {
@@ -23,6 +24,7 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const { theme } = useTheme();
 
   const handleDelete = async () => {
     try {
@@ -46,11 +48,11 @@ const Comment = (props) => {
   return (
     <>
       <hr />
-      <Card>
+      <Card className={styles.Comment}>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
-        <Card.Body className="align-self-center ml-2">
+        <Card.Body className={`align-self-center ml-2 ${styles.Comment}`}>
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           {showEditForm ? (
@@ -75,6 +77,9 @@ const Comment = (props) => {
       </Card>
     </>
   );
+
+
+
 };
 
 export default Comment;
