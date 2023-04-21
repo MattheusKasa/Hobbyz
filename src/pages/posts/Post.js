@@ -88,7 +88,7 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-
+  
           <div className="d-flex align-items-center">
             <span
               className={`${
@@ -152,15 +152,16 @@ const Post = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           )}
-          {likes_count}
+          <span className={styles.counterNumber}>{likes_count}</span>
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>
-          {comments_count}
+          <span className={styles.counterNumber}>{comments_count}</span>
         </div>
       </Card.Body>
     </Card>
   );
+  
 };
 
 export default Post;
