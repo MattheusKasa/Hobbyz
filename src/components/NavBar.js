@@ -13,6 +13,7 @@ import useClickOutsideToggle from '../hooks/UseClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
 import { useTheme } from '../contexts/ThemeContext';
 
+
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const SetCurrentUser = useSetCurrentUser();
@@ -88,7 +89,9 @@ const NavBar = () => {
   
   return (
     <div>
-      <Navbar className={styles.NavBar} expand="md" fixed="top">
+      <Navbar className={`${styles.NavBar} ${theme === 'dark' ? styles.NavBarDark : ''}`} expand="md" fixed="top">
+
+
         <Container fluid>
           <NavLink to="/">
             <Navbar.Brand>
@@ -105,8 +108,8 @@ const NavBar = () => {
             {currentUser ? loggedInIcons : loggedOutIcons}
             <Nav className={`${styles.NavLink} ${styles.MoonNav}`}>
               <button onClick={handleThemeToggle}>
-                <i className={`fas fa-2x fa-moon ${theme === 'moon' ? '' : styles.hiddenIcon}`}></i>
-                <i className={`fas fa-2x fa-sun ${theme === 'sun' ? '' : styles.hiddenIcon}`}></i>
+                <i className={`fas fa-2x fa-moon ${theme === 'dark' ? '' : styles.hiddenIcon}`}></i>
+                <i className={`fas fa-2x fa-sun ${theme === 'dark' ? styles.hiddenIcon : ''}`}></i>
               </button>
             </Nav>
           </Navbar.Collapse>

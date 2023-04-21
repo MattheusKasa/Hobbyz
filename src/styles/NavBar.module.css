@@ -1,6 +1,4 @@
-.NavBar {
-    background-color: #ffffff;
-}
+
 
 .NavLink {
   padding: 5px;
@@ -54,4 +52,9 @@
 
 .hiddenIcon {
   display: none;
+}
+
+.NavBarDark {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
