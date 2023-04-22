@@ -2,6 +2,8 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropdownEdit.module.css";
 import { useHistory } from "react-router";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import { axiosReq } from "../api/axiosDefaults";
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i className="fas fa-ellipsis-v" ref={ref} onClick={(e) => { e.preventDefault(); onClick(e); }} />
@@ -30,6 +32,22 @@ export const DropdownEdit = ({ handleEdit, handleDelete }) => {
 
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleDeleteAccount = async () => {
+    try {
+      await axiosReq.delete(`/dj-rest-auth/user/`);
+      setCurrentUser(null);
+      history.push("/");
+    } catch (err) {
+    console.log(err);
+
+    }
+  };
+
+
+
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -51,6 +69,14 @@ export function ProfileEditDropdown({ id }) {
           <i className="fas fa-key" />
           Change password
         </Dropdown.Item>
+
+        <Dropdown.Item
+          onClick={handleDeleteAccount}
+          aria-label="delete-account">
+          <i className="fas fa-user-slash" />
+          Delete account
+        </Dropdown.Item>
+
       </Dropdown.Menu>
     </Dropdown>
   );
