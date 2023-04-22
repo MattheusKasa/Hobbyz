@@ -48,7 +48,7 @@ function PostCreateForm() {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("title", title);
+    formData.append("title", `${category}: ${title}`);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
     formData.append("category", category);
@@ -80,6 +80,26 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+
+
+
+
+<Form.Group>
+  <Form.Label>Category</Form.Label>
+  <Form.Control
+    type="text"
+    name="category"
+    value={category}
+    onChange={handleChange}
+  />
+</Form.Group>
+{errors?.category?.map((message, idx) => (
+  <Alert variant="warning" key={idx}>
+    {message}
+  </Alert>
+))}
+
+
 
       <Form.Group>
         <Form.Label>Content</Form.Label>
