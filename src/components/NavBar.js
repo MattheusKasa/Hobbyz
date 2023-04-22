@@ -43,19 +43,34 @@ const NavBar = () => {
   
 
   const addPostIcon = (
-    <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/posts/create">
-      <i className="far fa-plus-square"></i>Add a Hobby
-    </NavLink>
+    <NavLink
+    className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
+
+    to="/posts/create"
+  >
+    <i className="far fa-plus-square"></i>Add a Hobby
+  </NavLink>
   );
 
   const loggedInIcons = (
     <>
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/feed">
-        <i className="fa-solid fa-user-check"></i>Followed
-      </NavLink>
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/liked">
-        <i className="fas fa-heart"></i>Liked
-      </NavLink>
+<NavLink
+      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
+      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
+
+      to="/feed"
+    >
+      <i className="fa-solid fa-user-check"></i>Followed
+    </NavLink>
+    <NavLink
+      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
+      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
+
+      to="/liked"
+    >
+      <i className="fas fa-heart"></i>Liked
+    </NavLink>
       <NavDropdown
         ref={ref}
         onClick={() => setExpanded(!expanded)}
@@ -83,12 +98,22 @@ const NavBar = () => {
 
   const loggedOutIcons = (
     <>
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-        <i className="fas fa-sign-in-alt"></i>Sign in
-      </NavLink>
-      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
-        <i className="fas fa-user-plus"></i>Sign Up
-      </NavLink>
+<NavLink
+      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
+      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
+
+      to="/signin"
+    >
+      <i className="fas fa-sign-in-alt"></i>Sign in
+    </NavLink>
+    <NavLink
+      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
+      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
+
+      to="/signup"
+    >
+      <i className="fas fa-user-plus"></i>Sign Up
+    </NavLink>
     </>
   );
   

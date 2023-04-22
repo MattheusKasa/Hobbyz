@@ -2,7 +2,7 @@
 
 .NavLink {
   padding: 5px;
-  color: #700365;
+  color: #333;
   text-decoration: none;
   display: inline-block;
 }
@@ -49,6 +49,18 @@
   color: #EFCB58;
   transition: color ease-in-out 0.5s;
 }
+
+
+
+
+.DarkModeText {
+  color: #ffffff;
+}
+
+.DarkModeActive {
+  color: #EFCB58;
+}
+
 
 
 

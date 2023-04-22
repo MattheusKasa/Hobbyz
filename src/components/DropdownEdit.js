@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropdownEdit.module.css";
 import { useHistory } from "react-router";
-import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import { useSetCurrentUser } from "../contexts/CurrentUserContext";
 import { axiosReq } from "../api/axiosDefaults";
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
@@ -32,12 +32,11 @@ export const DropdownEdit = ({ handleEdit, handleDelete }) => {
 
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
-  const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   const handleDeleteAccount = async () => {
     try {
-      await axiosReq.delete(`/dj-rest-auth/user/`);
+      await axiosReq.delete(`/api/profiles/user/delete/`);
       setCurrentUser(null);
       history.push("/");
     } catch (err) {
