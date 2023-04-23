@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from '../styles/NavBar.module.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/lightmode.logo.png';
+import darkLogo from '../assets/darkmode.logo.png';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
@@ -134,11 +135,11 @@ const NavBar = () => {
 
 
         <Container fluid>
-          <NavLink to="/">
-            <Navbar.Brand>
-              <img src={logo} alt="logo" height="50" href="/" />
-            </Navbar.Brand>
-          </NavLink>
+        <NavLink to="/">
+  <Navbar.Brand>
+    <img src={theme === "moon" ? darkLogo : logo} alt="logo" height="50" href="/" />
+  </Navbar.Brand>
+</NavLink>
           <span className={styles.welcomeText}>Welcome to Hobbyz!</span>
           {currentUser && addPostIcon}
           <Navbar.Toggle
