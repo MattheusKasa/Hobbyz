@@ -32,7 +32,10 @@ const NavBar = () => {
   };
 
   const [icon, setIcon] = useState("moon");
-  const [navBackground, setNavBackground] = useState(theme === "dark" ? "#1a1a1a" : "#ffffff");
+  const [navBackground, setNavBackground] = useState(
+    theme === "moon" ? "#1a1a1a" : "#ffffff"
+  );
+
 
   const handleThemeToggle = () => {
     console.log('Toggling theme:', theme);
@@ -41,7 +44,7 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    setNavBackground(theme === "dark" ? "#1a1a1a" : "#ffffff");
+    setNavBackground(theme === "moon" ? "#1a1a1a" : "#ffffff");
   }, [theme]);
 
   
@@ -49,9 +52,8 @@ const NavBar = () => {
 
   const addPostIcon = (
     <NavLink
-    className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
-    activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
-
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
     to="/posts/create"
   >
     <i className="far fa-plus-square"></i>Add a Hobby
@@ -61,21 +63,19 @@ const NavBar = () => {
   const loggedInIcons = (
     <>
 <NavLink
-      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
-      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
-
-      to="/feed"
-    >
-      <i className="fa-solid fa-user-check"></i>Followed
-    </NavLink>
-    <NavLink
-      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
-      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
-
-      to="/liked"
-    >
-      <i className="fas fa-heart"></i>Liked
-    </NavLink>
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
+    to="/feed"
+  >
+    <i className="fa-solid fa-user-check"></i>Followed
+  </NavLink>
+  <NavLink
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
+    to="/liked"
+  >
+    <i className="fas fa-heart"></i>Liked
+  </NavLink>
       <NavDropdown
         ref={ref}
         onClick={() => setExpanded(!expanded)}
@@ -104,21 +104,19 @@ const NavBar = () => {
   const loggedOutIcons = (
     <>
 <NavLink
-      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
-      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
-
-      to="/signin"
-    >
-      <i className="fas fa-sign-in-alt"></i>Sign in
-    </NavLink>
-    <NavLink
-      className={`${styles.NavLink} ${theme === 'dark' ? styles.DarkModeText : ''}`}
-      activeClassName={`${theme === 'dark' ? styles.DarkModeActive : styles.Active}`}
-
-      to="/signup"
-    >
-      <i className="fas fa-user-plus"></i>Sign Up
-    </NavLink>
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
+    to="/signin"
+  >
+    <i className="fas fa-sign-in-alt"></i>Sign in
+  </NavLink>
+  <NavLink
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
+    to="/signup"
+  >
+    <i className="fas fa-user-plus"></i>Sign Up
+  </NavLink>
     </>
   );
   

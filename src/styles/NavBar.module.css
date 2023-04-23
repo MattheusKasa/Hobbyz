@@ -86,3 +86,12 @@
 .NavBar {
   transition: background-color 0.3s;
 }
+
+
+.NavLink.DarkModeText {
+  color: #ffffff;
+}
+
+.NavLink.DarkModeActive {
+  color: #EFCB58;
+}
