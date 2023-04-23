@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -31,13 +31,18 @@ const NavBar = () => {
     }
   };
 
+  const [icon, setIcon] = useState("moon");
+  const [navBackground, setNavBackground] = useState(theme === "dark" ? "#1a1a1a" : "#ffffff");
+
   const handleThemeToggle = () => {
     console.log('Toggling theme:', theme);
     toggleTheme();
     setIcon(prevIcon => prevIcon === "moon" ? "sun" : "moon");
   };
-  
-  const [icon, setIcon] = useState("moon");
+
+  useEffect(() => {
+    setNavBackground(theme === "dark" ? "#1a1a1a" : "#ffffff");
+  }, [theme]);
 
   
   
@@ -119,7 +124,15 @@ const NavBar = () => {
   
   return (
     <div>
-      <Navbar className={`${styles.NavBar} ${theme === 'dark' ? styles.NavBarDark : ''}`} expand="md" fixed="top">
+           <Navbar
+        className={`${styles.NavBar}`}
+        style={{ backgroundColor: navBackground }}
+        expand="md"
+        fixed="top"
+      >
+
+
+
 
 
         <Container fluid>

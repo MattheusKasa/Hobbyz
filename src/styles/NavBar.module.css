@@ -66,10 +66,7 @@
 
 
 
-.NavBarDark {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
+
 
 
 .navContent {
@@ -86,3 +83,6 @@
   align-self: center;
 }
 
+.NavBar {
+  transition: background-color 0.3s;
+}
