@@ -142,11 +142,30 @@ const NavBar = () => {
           <span className={styles.welcomeText}>Welcome to Hobbyz!</span>
           {currentUser && addPostIcon}
           <Navbar.Toggle
-            ref={ref}
-            onClick={() => setExpanded(!expanded)}
-            aria-controls="basic-navbar-nav"
-          />
-          <Navbar.Collapse className="ml-auto text-left">
+  ref={ref}
+  onClick={() => setExpanded(!expanded)}
+  aria-controls="basic-navbar-nav"
+  style={{
+    border: "1px solid white",
+    backgroundColor: "white",
+  }}
+>
+  <span
+    className="navbar-toggler-icon"
+    style={{
+      backgroundImage:
+        'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3E%3Cpath stroke=\'rgba(0, 0, 0)\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E")',
+    }}
+  ></span>
+</Navbar.Toggle>
+
+
+
+
+
+          <Navbar.Collapse className={`${ theme === "moon" ? styles.DarkModeDropdown : "" } ml-auto text-left`}
+          >
+
           <div className={styles.navContent}>
             {currentUser ? loggedInIcons : loggedOutIcons}
             <Nav className={`${styles.NavLink} ${styles.MoonNav}`}>
