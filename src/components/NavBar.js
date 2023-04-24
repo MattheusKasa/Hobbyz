@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,17 +10,22 @@ import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
-import useClickOutsideToggle from '../hooks/UseClickOutsideToggle';
+import useClickOutsideToggle from "../hooks/UseClickOutsideToggle";
 import { removeTokenTimestamp } from '../utils/utils';
 import { useTheme } from '../contexts/ThemeContext';
-
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const SetCurrentUser = useSetCurrentUser();
   const { theme, toggleTheme } = useTheme();
+  const navbarRef = useRef(null);
+  const { expanded, setExpanded } = useClickOutsideToggle(navbarRef);
 
-  const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
+
+
+
+
 
   const handleSignOut = async () => {
     try {
@@ -53,7 +58,7 @@ const NavBar = () => {
 
   const addPostIcon = (
     <NavLink
-    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : styles.LightModeNavLink}`}
     activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
     to="/posts/create"
   >
@@ -64,21 +69,23 @@ const NavBar = () => {
   const loggedInIcons = (
     <>
 <NavLink
-    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
-    activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
-    to="/feed"
-  >
-    <i className="fa-solid fa-user-check"></i>Followed
-  </NavLink>
+  className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : styles.LightModeNavLink}`}
+  activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
+  to="/feed"
+>
+  <i className="fa-solid fa-user-check"></i>Followed
+</NavLink>
+
   <NavLink
-    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : styles.LightModeNavLink}`}
+
     activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
     to="/liked"
   >
     <i className="fas fa-heart"></i>Liked
   </NavLink>
       <NavDropdown
-        ref={ref}
+        
         onClick={() => setExpanded(!expanded)}
         title={
           <>
@@ -105,14 +112,16 @@ const NavBar = () => {
   const loggedOutIcons = (
     <>
 <NavLink
-    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : styles.LightModeNavLink}`}
+
     activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
     to="/signin"
   >
     <i className="fas fa-sign-in-alt"></i>Sign in
   </NavLink>
   <NavLink
-    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : ''}`}
+    className={`${styles.NavLink} ${theme === 'moon' ? styles.DarkModeText : styles.LightModeNavLink}`}
+
     activeClassName={`${theme === 'moon' ? styles.DarkModeActive : styles.Active}`}
     to="/signup"
   >
@@ -123,12 +132,15 @@ const NavBar = () => {
   
   return (
     <div>
-           <Navbar
-        className={`${styles.NavBar}`}
-        style={{ backgroundColor: navBackground }}
-        expand="md"
-        fixed="top"
-      >
+            <Navbar
+      ref={navbarRef}
+      className={`${styles.NavBar}`}
+      style={{ backgroundColor: navBackground }}
+      expand="md"
+      fixed="top"
+    >
+
+
 
 
 
@@ -143,7 +155,6 @@ const NavBar = () => {
           <span className={styles.welcomeText}>Welcome to Hobbyz!</span>
           {currentUser && addPostIcon}
           <Navbar.Toggle
-  ref={ref}
   onClick={() => setExpanded(!expanded)}
   aria-controls="basic-navbar-nav"
   style={{
@@ -164,8 +175,13 @@ const NavBar = () => {
 
 
 
-          <Navbar.Collapse className={`${ theme === "moon" ? styles.DarkModeDropdown : "" } ml-auto text-left`}
-          >
+<Navbar.Collapse
+  className={`${theme === "moon" ? styles.DarkModeDropdown : ""} ml-auto text-left`}
+  expanded={expanded}
+  onSelect={() => setExpanded(false)}
+>
+
+
 
           <div className={styles.navContent}>
             {currentUser ? loggedInIcons : loggedOutIcons}
