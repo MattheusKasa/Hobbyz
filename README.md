@@ -20,3 +20,27 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 + [Deployment](#deployment "Deployment")
 
 + [Credits](#credits "Credits")
+
+## UX
+
+### Site Purpose:
+- To foster engagement and connection within the hobby community by allowing users to share images of their hobbies, while interacting with and supporting other users through comments and likes.
+
+### Site Goal:
+- Hobbyz aims to cultivate a thriving community where hobby enthusiasts can discover new inspirations, share their experiences, and connect with like-minded individuals.
+
+### Audience:
+- Everyone with a passion for hobbies, from beginners to experts, seeking to reach out and connect with fellow enthusiasts.
+
+### Communication:
+- The website layout is designed to be user-friendly, visually appealing, and engaging, with a straightforward navigation panel for quick access to various sections. Users can effortlessly browse through hobby-related images and interact with others by liking or commenting on their posts.
+
+### Current User Goals:
+- To ensure that users return to Hobbyz regularly to discover new content, engage with their favorite hobbyists, and stay updated on the latest posts from users they follow.
+
+### New User Goal:
+- To captivate new users, encouraging them to delve into the wide array of hobbies showcased on the site and inspire them to share their own experiences.
+
+### Future Goals:
+- Implement different user account types to control the publishing of specific content, such as featured hobby collections or tutorials.
+- Introduce private messaging functionality to enable users to communicate one-on-one or with a group of users.
