@@ -30,7 +30,7 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  const { theme } = useTheme(); // Add this line
+  const { theme } = useTheme();
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
@@ -41,7 +41,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}`);
       history.goBack();
     } catch (err) {
-      // console.log(err);
+
     }
   };
 
@@ -60,7 +60,7 @@ const Post = (props) => {
             }),
         }));
     } catch(err){
-        // console.log(err);
+
     }
   }
 
@@ -76,7 +76,7 @@ const Post = (props) => {
             }),
         }));
     } catch (err) {
-        // console.log(err)
+
     }
   };
 

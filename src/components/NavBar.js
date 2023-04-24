@@ -33,7 +33,7 @@ const NavBar = () => {
       SetCurrentUser(null);
       removeTokenTimestamp();
     } catch (err) {
-      // console.log(err); //
+
     }
   };
 
