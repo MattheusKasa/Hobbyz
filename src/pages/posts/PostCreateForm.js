@@ -176,7 +176,6 @@ function PostCreateForm() {
                   <Asset
                     src={Upload}
                     message="Click or tap to upload an image"
-                    className={styles.placeholderImage}
                   />
                   </figure>
                 </Form.Label>

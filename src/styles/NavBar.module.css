@@ -133,3 +133,6 @@
   text-decoration: none;
 }
 
+.NavBar {
+  z-index: 100;
+}

@@ -6,16 +6,3 @@ figure img {
   max-width: 100%;
   margin-top: 68px;
 }
-
-.placeholder-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  max-height: 400px;
-  margin: 0 auto;
-}
-
-asset img {
-  max-width: 100%;
-  margin-top: 10px;
-}
