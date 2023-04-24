@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-
+import { useState, useEffect, } from 'react';
 
 const useClickOutsideToggle = (ref) => {
   const [expanded, setExpanded] = useState(false);
@@ -11,16 +10,13 @@ const useClickOutsideToggle = (ref) => {
           event.target.closest("a") !== null
         ) {
           setExpanded(false);
-          setInternalExpanded(false);
         } else if (
           event.target.classList.contains("navbar-toggler") ||
           event.target.closest(".navbar-toggler") !== null
         ) {
           setExpanded((prevState) => !prevState);
-          setInternalExpanded((prevState) => !prevState);
         } else {
           setExpanded(false);
-          setInternalExpanded(false);
         }
       }
     };
