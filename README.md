@@ -172,5 +172,20 @@ web: serve -s build
 3. Perform the git add, commit, and push steps again.
 4. Deploy the project using the deploy button on Heroku.
 
-### Deploying to Render and ElephantSQL:
+### Deploying to ElephantSQL:
 * The project has been deployed using [ElephantSQL](https://www.elephantsql.com/) by following these [instructions](https://code-institute-students.github.io/deployment-docs/41-pp5-adv-fe/pp5-adv-fe-drf-01-create-a-database).
+
+## Credits
+---
+### Media:
+- Images for the profile pictures and posts on the site were collected from various sources on google and pexels. The original content creators of these images are not known.
+- Images for the different pages created using Canva
+
+### Content
+- Code Institute: The foundation for this project was built using the Moments walkthrough as a step-by-step guide, which was then customized and expanded upon to create a unique project.
+- Font awesome for fonts.
+- Programming with Mosh on Youtube.
+- Web Dev Simplified on Youtube.
+- Font awesome for fonts.
+- Code institute Slack Channel
+- Countless other YouTube videos for inspiration
