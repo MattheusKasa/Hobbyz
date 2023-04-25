@@ -230,5 +230,5 @@ web: serve -s build
 - Font awesome for fonts.
 - Code institute Slack Channel
 - Countless other YouTube videos for inspiration
-
+---
 [🔼 Back to top](#hobbyz)
