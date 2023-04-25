@@ -45,6 +45,28 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Implement different user account types to control the publishing of specific content, such as featured hobby collections or tutorials.
 - Introduce private messaging functionality to enable users to communicate one-on-one or with a group of users.
 
+## Design
+---
+### Wireframes:
+
+#### Main Page Unauthorised
+![Desktop Home](src/assets/readme-images/Wireframe%20Home%20Page%20Not%20Authorised.png)
+
+#### Main Page
+![Desktop Home](src/assets/readme-images/Wireframe%20Home%20Page%20Authorised.png)
+
+#### Create Post
+![Create Post](src/assets/readme-images/Wireframe%20Create%20Post.png)
+
+#### Edit Profile
+![Edit Profile](src/assets/readme-images/Wireframe%20Edit%20Profile.png)
+
+### Colour Scheme
+![Color Palette](src/assets/readme-images/Color%20Scheme.png)
+
+### Typography
+#### The font was sourced from the Google Fonts library. The following font was selected for the page:
+- Roboto
 
 ## Features
 ---
