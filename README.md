@@ -143,6 +143,10 @@ You can also find a comprehensive list of Epics, User Stories, and Story Points 
 ---
 ### Validator Testing
 
+### Jigsaw
+- Css files gets a couple parsing errors that i unfortunately couldnt fix ![Jigsaw Validator](src/assets/readme-images/W3C%20css%20validator.png)
+
+
 #### Lighthouse
 - The page has a good rating in lighthouse except for in performance, this is due to the uploaded images not being properly sized, i have decided to leave this in due to not having enough time to correct it.
 
