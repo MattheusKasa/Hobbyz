@@ -22,7 +22,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 + [Credits](#credits "Credits")
 
 ## UX
-
+---
 ### Site Purpose:
 - To foster engagement and connection within the hobby community by allowing users to share images of their hobbies, while interacting with and supporting other users through comments and likes.
 
@@ -47,7 +47,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 
 
 ## Features
-
+---
 ### Existing Features:
 
 #### Header:
@@ -101,9 +101,9 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 
 - The website was successfully tested for compatibility without any issues on Brave, Chrome, Safari, and a mobile device.
 
-## Technologies Used
+## Technologies
 ---
-### Main Languages Used
+### Languages Used
 - HTML5
 - CSS3
 - Javascript
@@ -122,6 +122,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Django for constructing the backend database that serves as an API for the front-end project.
 
 ## Components
+---
 In this project, multiple components have been developed and employed consistently across the entire project:
 
 - axiosDefault.js: Facilitates seamless communication with the backend API.
@@ -130,3 +131,46 @@ In this project, multiple components have been developed and employed consistent
 - CurrentUserContext.js: Determines the available functionality for users based on their logged-in status.
 - ProfileDataContext.js: Offers the ability to follow and unfollow other users.
 - utils.js: Delivers functionality to all components utilizing Infinite Scroll.
+
+## Deployment
+---
+The website has been deployed on Heroku. The deployment process involves the following steps:
+
+1. Open the Gitpod workspace.
+2. Set up ReactJS by running the following commands:
+```
+npx create-react-app . --use-npm
+npm start
+```
+3. Install the required packages with `npm install`.
+```
+bootstrap@5.2.3
+react-bootstrap@2.7.0
+axios
+jwt-decode@3.1.2
+react-infinite-scroll-component
+```
+4. Add, commit, and push changes to the Gitpod repository using Git.
+5. Set up the project app on Heroku and connect it to the GitHub repository by going to the "Deploy" tab.
+
+### Connecting to the API:
+1. Go to the Heroku app for the project API, and under the Settings tab, add the following config variables:
+- Key: CLIENT_ORIGIN | Value: https://react-app-name.herokuapp.com
+- Key: CLIENT_ORIGIN_DEV | Value: https://gitpod-browser-link.ws-eu54.gitpod.io
+2. Ensure that the trailing slash is removed from the end of both links, and save the config variable pairs.
+3. Install the Axios package and create a supporting `axiosDefaults.js` file.
+
+### Deploying to Heroku:
+1. In the `scripts` section of `package.json` in Gitpod, add the following command:
+```
+"heroku-prebuild": "npm install -g serve",
+```
+2. Add a Procfile to the project root and add the following:
+```
+web: serve -s build
+```
+3. Perform the git add, commit, and push steps again.
+4. Deploy the project using the deploy button on Heroku.
+
+### Deploying to Render and ElephantSQL:
+* The project has been deployed using [ElephantSQL](https://www.elephantsql.com/) by following these [instructions](https://code-institute-students.github.io/deployment-docs/41-pp5-adv-fe/pp5-adv-fe-drf-01-create-a-database).
