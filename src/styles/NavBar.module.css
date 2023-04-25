@@ -33,12 +33,11 @@
   padding: 7px;
 }
 
-  
-  @media (max-width: 767px) {
-    .hideOnDesktop {
-      display: inline;
-    }
+@media (max-width: 767px) {
+  .hideOnDesktop {
+    display: inline;
   }
+}
 
 .navbarItemsContainer {
     display: flex;
@@ -51,9 +50,6 @@
   transition: color ease-in-out 0.5s;
 }
 
-
-
-
 .DarkModeText {
   color: #ffffff;
 }
@@ -62,16 +58,10 @@
   color: #EFCB58;
 }
 
-
-
-
 .Navlink:hover {
   color: black;
   text-decoration: none;
 }
-
-
-
 
 .navContent {
   display: flex;
@@ -91,7 +81,6 @@
   transition: background-color 0.3s;
 }
 
-
 .NavLink.DarkModeText {
   color: #ffffff;
   text-decoration: none;
@@ -101,7 +90,6 @@
   color: #EFCB58;
   text-decoration: none;
 }
-
 
 .DarkModeDropdown {
   background-color: #1a1a1a !important;
