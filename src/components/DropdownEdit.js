@@ -40,8 +40,6 @@ export function ProfileEditDropdown({ id }) {
       setCurrentUser(null);
       history.push("/");
     } catch (err) {
-    console.log(err);
-
     }
   };
 

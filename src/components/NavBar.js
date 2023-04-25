@@ -44,7 +44,7 @@ const NavBar = () => {
 
 
   const handleThemeToggle = () => {
-    console.log('Toggling theme:', theme);
+    ('Toggling theme:', theme);
     toggleTheme();
     setIcon(prevIcon => prevIcon === "moon" ? "sun" : "moon");
   };
