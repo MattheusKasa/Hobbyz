@@ -4,22 +4,36 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 
 ## Table of Contents
 + [UX](#ux "UX")
-
-+ [User Stories](#user-stories "User Stories")
+    + [Site Purpose](#site-purpose "Site Purpose")
+    + [Site Goal](#site-goal "Site Goal")
+    + [Audience](#audience "Audience")
+    + [Communication](#communication "Communication")
+    + [Current User Goals](#current-user-goals "Current User Goals")
+    + [New User Goals](#new-user-goals "New User Goals")
+    + [Future Goals](#future-goals "Future Goals")
 
 + [Design](#design "Design")
-
+    + [Colour Scheme](#colour-scheme "Colour Scheme")
+    + [Typography](#typography "Typography")
 + [Features](#features "Features")
+    + [Existing Features](#existing-features "Existing Features")
+    + [Features not yet implemented](#features-not-yet-implemented "Features not yet implemented")
+
+
 
 + [Testing](#testing "Testing")
 
-+ [Technologies Used](#technologies-used "Technologies Used")
++ [Technologies utilized](#technologies-utilized "Technologies utilized")
 
-+ [Components](#oomponents "Components")
++ [Components](#components "Components")
 
 + [Deployment](#deployment "Deployment")
 
 + [Credits](#credits "Credits")
+    + [Media](#media "Media")
+    + [Content](#content "Content")
+
+
 
 ## UX
 ---
@@ -38,7 +52,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 ### Current User Goals:
 - To ensure that users return to Hobbyz regularly to discover new content, engage with their favorite hobbyists, and stay updated on the latest posts from users they follow.
 
-### New User Goal:
+### New User Goals:
 - To captivate new users, encouraging them to delve into the wide array of hobbies showcased on the site and inspire them to share their own experiences.
 
 ### Future Goals:
@@ -131,7 +145,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Javascript
 - Postgres SQL
 
-### The following tools and technologies were utilized:
+### Technologies utilized
 - GitPod for building the project and creating the JSX and CSS files before pushing the project to GitHub.
 - GitHub for storing the repository for submission.
 - Google Fonts for site fonts.
