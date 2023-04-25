@@ -44,3 +44,48 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 ### Future Goals:
 - Implement different user account types to control the publishing of specific content, such as featured hobby collections or tutorials.
 - Introduce private messaging functionality to enable users to communicate one-on-one or with a group of users.
+
+
+## Features
+
+### Existing Features:
+
+#### Header:
+![Header](src/assets/readme-images/Header.png)
+
+#### Navigation
+![Navbar](src/assets/readme-images/Navigation.png)
+
+#### Posts Page:
+![Posts Page](src/assets/readme-images/Posts%20Page.png)
+
+#### Submission Form:
+![Submission Form](src/assets/readme-images/Submission%20Form.png)
+
+#### 404 Page Not Found:
+![404](src/assets/readme-images/404%20Page%20Not%20Found.png)
+
+#### Popular Profiles:
+![Popular Profiles](src/assets/readme-images/Popular%20Profiles.png)
+
+#### Sign-Up:
+![Sign Up](src/assets/readme-images/Sign%20Up.png)
+
+#### Sign-In:
+![Sign In](src/assets/readme-images/Sign%20In.png)
+
+#### Sign-Out:
+![Sign Out](src/assets/readme-images/Sign%20Out.png)
+
+#### Commenting:
+![Commenting](src/assets/readme-images/Commenting.png)
+
+#### Liking:
+![Liking](src/assets/readme-images/Liking.png)
+
+### Features not yet implemented:
+- Notifications when a user receives a new comment, follower or like.
+- Private messaging between users.
+- Group messaging between users.
+- Ability to block users, making it so that a user can choose to not see posts and comments from a blocked user.
+- Contact form so that users can provide feedback.
