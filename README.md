@@ -1,6 +1,11 @@
 # Hobbyz
 Hobbyz is a community-driven website that provides a platform for hobby enthusiasts to share their interests with like-minded people. It allows users to upload pictures of their hobbies, including but not limited to, photography, painting, knitting, cooking, and many more. Users can also comment on or like to other people's posts, creating a vibrant and engaging online community. Whether you are a seasoned hobbyist or a curious beginner, Hobbyz is the perfect place to explore your interests and connect with others who share your passion.
 
+![Mockup](src/assets/readme-images/Mockup%20Hobbyz.png)
+
+You can access the live version of "Hobbyz" by clicking [HERE](https://hobbyz.herokuapp.com/)
+
+The associated API repository for this project can be found [HERE](https://github.com/MattheusKasa/hobbyz-api)
 
 ## Table of Contents
 + [UX](#ux "UX")
@@ -11,7 +16,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
     + [Current User Goals](#current-user-goals "Current User Goals")
     + [New User Goals](#new-user-goals "New User Goals")
     + [Future Goals](#future-goals "Future Goals")
-    
+
 + [Design](#design "Design")
     + [Colour Scheme](#colour-scheme "Colour Scheme")
     + [Typography](#typography "Typography")
