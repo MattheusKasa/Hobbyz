@@ -91,7 +91,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Contact form so that users can provide feedback.
 
 ## Testing
-
+---
 ### Validator Testing
 
 #### Lighthouse
@@ -100,3 +100,33 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 ![Lighthouse](src/assets/readme-images/Lighthouse.png)
 
 - The website was successfully tested for compatibility without any issues on Brave, Chrome, Safari, and a mobile device.
+
+## Technologies Used
+---
+### Main Languages Used
+- HTML5
+- CSS3
+- Javascript
+- Postgres SQL
+
+### The following tools and technologies were utilized:
+- GitPod for building the project and creating the JSX and CSS files before pushing the project to GitHub.
+- GitHub for storing the repository for submission.
+- Google Fonts for site fonts.
+- Font Awesome to incorporate icons into the navigation sections.
+- Balsamiq for creating mockups of the project before commencing.
+- Favicon to provide the code and image for the icon in the tab bar.
+- Am I Responsive? to verify that the project looked good across all devices.
+- ReactJS to develop the components that would collectively form the front-end application.
+- React-Bootstrap, a styling library, that contributed to the layout of the site.
+- Django for constructing the backend database that serves as an API for the front-end project.
+
+## Components
+In this project, multiple components have been developed and employed consistently across the entire project:
+
+- axiosDefault.js: Facilitates seamless communication with the backend API.
+- Asset.js: Provides a loading spinner and user avatar across the website.
+- DropdownEdit.js: Enables users to edit their profile.
+- CurrentUserContext.js: Determines the available functionality for users based on their logged-in status.
+- ProfileDataContext.js: Offers the ability to follow and unfollow other users.
+- utils.js: Delivers functionality to all components utilizing Infinite Scroll.
