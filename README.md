@@ -11,19 +11,21 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
     + [Current User Goals](#current-user-goals "Current User Goals")
     + [New User Goals](#new-user-goals "New User Goals")
     + [Future Goals](#future-goals "Future Goals")
-
+    
 + [Design](#design "Design")
     + [Colour Scheme](#colour-scheme "Colour Scheme")
     + [Typography](#typography "Typography")
+
 + [Features](#features "Features")
     + [Existing Features](#existing-features "Existing Features")
     + [Features not yet implemented](#features-not-yet-implemented "Features not yet implemented")
 
-
-
 + [Testing](#testing "Testing")
+    + [Validator Testing](#validator-testing "Validator Testing")
 
-+ [Technologies utilized](#technologies-utilized "Technologies utilized")
++ [Technologies](#technologies "Technologies")
+    + [Languages Used](#languages-used "Languages Used")
+    + [Tools and technologies utilized](#tools-and-technologies-utilized "Tools and technologies utilized")
 
 + [Components](#components "Components")
 
@@ -32,8 +34,6 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 + [Credits](#credits "Credits")
     + [Media](#media "Media")
     + [Content](#content "Content")
-
-
 
 ## UX
 ---
@@ -145,7 +145,7 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Javascript
 - Postgres SQL
 
-### Technologies utilized
+### Tools and technologies utilized
 - GitPod for building the project and creating the JSX and CSS files before pushing the project to GitHub.
 - GitHub for storing the repository for submission.
 - Google Fonts for site fonts.
