@@ -22,7 +22,7 @@ As a user, I want to view all posts to browse available content.
 
 As a user, I want to view post details for more information.
 
-As a user, I want to like a post to quickly show appreciation for others' content.
+As a user, I want to like a post to quickly show appreciation for others content.
 
 As a user, I want to view liked posts to revisit the content I've appreciated before.
 
@@ -60,7 +60,7 @@ As a user, I want to create comments to express my opinions.
 
 As a user, I want to see the date of comments to know their recency.
 
-As a user, I want to view other comments to see others' perspectives.
+As a user, I want to view other comments to see others perspectives.
 
 As a user, I want to edit my comments to update information.
 

@@ -17,6 +17,8 @@ The associated API repository for this project can be found [HERE](https://githu
     + [New User Goals](#new-user-goals "New User Goals")
     + [Future Goals](#future-goals "Future Goals")
 
++ [User Stories](#user-stories "User Stories")
+
 + [Design](#design "Design")
     + [Colour Scheme](#colour-scheme "Colour Scheme")
     + [Typography](#typography "Typography")
@@ -63,6 +65,12 @@ The associated API repository for this project can be found [HERE](https://githu
 ### Future Goals:
 - Implement different user account types to control the publishing of specific content, such as featured hobby collections or tutorials.
 - Introduce private messaging functionality to enable users to communicate one-on-one or with a group of users.
+
+## User Stories
+---
+I have provided links to the [GitHub Issues](https://github.com/MattheusKasa/hobbyz/issues) related to this project, as well as the [KANBAN board](https://github.com/users/MattheusKasa/projects/6) for your reference.
+
+You can also find a comprehensive list of Epics, User Stories, and Story Points documented [HERE](src/assets/userstories.md).
 
 ## Design
 ---
