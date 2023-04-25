@@ -89,3 +89,14 @@ Hobbyz is a community-driven website that provides a platform for hobby enthusia
 - Group messaging between users.
 - Ability to block users, making it so that a user can choose to not see posts and comments from a blocked user.
 - Contact form so that users can provide feedback.
+
+## Testing
+
+### Validator Testing
+
+#### Lighthouse
+- The page has a good rating in lighthouse except for in performance, this is due to the uploaded images not being properly sized, i have decided to leave this in due to not having enough time to correct it.
+
+![Lighthouse](src/assets/readme-images/Lighthouse.png)
+
+- The website was successfully tested for compatibility without any issues on Brave, Chrome, Safari, and a mobile device.
